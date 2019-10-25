@@ -28,6 +28,7 @@ public class PlayShoot : MonoBehaviour
             Vector2 shootDir = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
             shootDir.Normalize();
             bullet.GetComponent<Rigidbody2D>().velocity = shootDir * bulletSpeed;
+            bullet.transform.up = shootDir;
             Destroy(bullet, bulletlifetime);
 
 
