@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     Transform targetLocation;
     public float paceFrequency = 4.0f;
     public float paceTimer;
+    public float rotationSpeed = 2.0f;
     void Start()
     {
         paceTimer = 0;
@@ -48,6 +49,13 @@ public class EnemyAI : MonoBehaviour
         else if (paceTimer > paceFrequency)
         {
             Pace();
+        }
+
+        Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;
+        if (moveDirection != Vector3.zero)
+        {
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
     }
 

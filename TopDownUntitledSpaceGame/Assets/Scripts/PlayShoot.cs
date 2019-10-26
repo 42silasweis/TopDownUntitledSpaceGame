@@ -9,9 +9,11 @@ public class PlayShoot : MonoBehaviour
     public float bulletlifetime = 1.0f;
     public float shootDelay = 1.0f;
     float timer = 0;
+    float playerVelocity;
     void Start()
     {
-        
+        //GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        //playerVelocity = Player.GetComponent<PlayerMovement>().moveDir;
     }
 
 
@@ -27,7 +29,8 @@ public class PlayShoot : MonoBehaviour
             Debug.Log(mousePosition);
             Vector2 shootDir = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
             shootDir.Normalize();
-            bullet.GetComponent<Rigidbody2D>().velocity = shootDir * bulletSpeed;
+            bullet.GetComponent<Rigidbody2D>().velocity = (shootDir * bulletSpeed) + GetComponent<Rigidbody2D>().velocity;
+            //bullet.GetComponent<Rigidbody2D>().velocity = shootDir * bulletSpeed;
             bullet.transform.up = shootDir;
             Destroy(bullet, bulletlifetime);
 

@@ -13,20 +13,20 @@ public class CoinCollect1 : MonoBehaviour
 
     void Start()
     {
-        coinText.text = "Coins: " + Coins + "/" + neededCoins;
+        coinText.text = "SCORE: " + Coins; // + "/" + neededCoins;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Coin")
+        if (collision.gameObject.tag == "Points")
         {
-            Coins++;
-            coinText.text = "COINS: " + Coins + "/" + neededCoins;
+            Coins += 10;
+            coinText.text = "SCORE: " + Coins; // + "/" + neededCoins;
             Destroy(collision.gameObject);
 
             if(Coins >= neededCoins)
             {
-                SceneManager.LoadScene("PlayerWins");
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene("Win");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

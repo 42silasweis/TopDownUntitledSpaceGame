@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2013619667965755462}
   - component: {fileID: 6892182607936873961}
   - component: {fileID: 1792431005132521450}
+  - component: {fileID: 6771533899183160425}
   m_Layer: 10
   m_Name: PBullet2
   m_TagString: PBullet
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821694695456739927}
-  m_LocalRotation: {x: 0, y: 0, z: -0.043619405, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: -0.01745245, w: 0.99984777}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4745106878842051873}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2}
 --- !u!212 &2012760627391978878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
@@ -113,7 +114,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -132,7 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletspeed: 200
+--- !u!114 &6771533899183160425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821694695456739927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3692118967145980972
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +158,7 @@ GameObject:
   - component: {fileID: 2193660746227653697}
   - component: {fileID: 6895195338019193455}
   - component: {fileID: 1792431005085184052}
+  - component: {fileID: 877917672308100999}
   m_Layer: 10
   m_Name: PBullet3
   m_TagString: PBullet
@@ -160,13 +173,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3692118967145980972}
-  m_LocalRotation: {x: 0, y: 0, z: 0.043619405, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0.01745245, w: 0.99984777}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4745106878842051873}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2}
 --- !u!212 &2716436579546555117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,7 +217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
@@ -246,7 +259,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -265,7 +278,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletspeed: 200
+--- !u!114 &877917672308100999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692118967145980972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4745106878842051872
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,9 +336,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -334,6 +358,7 @@ GameObject:
   - component: {fileID: 6328598054390704027}
   - component: {fileID: 1069127131892328078}
   - component: {fileID: 6727993603307609106}
+  - component: {fileID: 283659202420969442}
   m_Layer: 10
   m_Name: PBullet1
   m_TagString: PBullet
@@ -392,7 +417,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
@@ -432,7 +457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletspeed: 200
 --- !u!50 &6727993603307609106
 Rigidbody2D:
   serializedVersion: 4
@@ -447,10 +471,22 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &283659202420969442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598054390704031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

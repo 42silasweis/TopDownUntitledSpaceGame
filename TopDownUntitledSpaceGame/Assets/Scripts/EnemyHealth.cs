@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Playershoot")
+        if (collision.gameObject.tag == "PBullet")
         {
             enemyHealth--;
 
