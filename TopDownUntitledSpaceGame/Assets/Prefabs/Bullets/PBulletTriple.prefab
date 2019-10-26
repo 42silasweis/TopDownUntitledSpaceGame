@@ -94,12 +94,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0003790631, y: -0.00001323721}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.07306871
 --- !u!50 &6892182607936873961
 Rigidbody2D:
   serializedVersion: 4
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -239,12 +239,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0003790631, y: 0.00001323721}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.073827356
 --- !u!50 &6895195338019193455
 Rigidbody2D:
   serializedVersion: 4
@@ -259,7 +259,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -299,10 +299,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4745106878842051873}
-  - component: {fileID: 1960683859}
-  m_Layer: 0
+  - component: {fileID: 5972927533698941840}
+  m_Layer: 10
   m_Name: PBulletTriple
-  m_TagString: Untagged
+  m_TagString: PBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4745106878842051872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28034928, y: -0.90891194, z: -54.697807}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6328598054390704029}
@@ -324,7 +324,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1960683859
+--- !u!50 &5972927533698941840
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -336,9 +336,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -356,8 +356,8 @@ GameObject:
   - component: {fileID: 6328598054390704029}
   - component: {fileID: 6328598054390704028}
   - component: {fileID: 6328598054390704027}
-  - component: {fileID: 1069127131892328078}
   - component: {fileID: 6727993603307609106}
+  - component: {fileID: 1069127131892328078}
   - component: {fileID: 283659202420969442}
   m_Layer: 10
   m_Name: PBullet1
@@ -417,7 +417,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
@@ -439,24 +439,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0015172809, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
---- !u!114 &1069127131892328078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6328598054390704031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.07496528
 --- !u!50 &6727993603307609106
 Rigidbody2D:
   serializedVersion: 4
@@ -471,13 +459,25 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1069127131892328078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598054390704031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &283659202420969442
 MonoBehaviour:
   m_ObjectHideFlags: 0

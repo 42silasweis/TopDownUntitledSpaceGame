@@ -6,7 +6,7 @@ public class Crosshair : MonoBehaviour
 {
     private Vector3 MouseCoords;
     public GameObject crosshair;
-    public float MouseSensitivity = 0.1f;
+    public float MouseSensitivity = 10.0f;
     void Update()
     {
         MouseCoords = Input.mousePosition;

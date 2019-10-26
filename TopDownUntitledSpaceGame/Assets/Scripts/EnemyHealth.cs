@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject);
                 //Instantiate the object;
                 GameObject dropheart = Instantiate(heart, transform.position, Quaternion.identity);
+                dropheart.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
             }
         }
