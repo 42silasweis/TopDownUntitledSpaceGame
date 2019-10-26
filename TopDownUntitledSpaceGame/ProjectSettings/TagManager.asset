@@ -9,6 +9,7 @@ TagManager:
   - Points
   - Reticle
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

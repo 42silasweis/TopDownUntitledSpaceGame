@@ -12,7 +12,7 @@ public class Crosshair : MonoBehaviour
         MouseCoords = Input.mousePosition;
         MouseCoords = Camera.main.ScreenToWorldPoint(MouseCoords);
         crosshair.transform.position = Vector2.Lerp(transform.position, MouseCoords, MouseSensitivity);
-        print(MouseCoords);
+        //print(MouseCoords);
 
     }
 }

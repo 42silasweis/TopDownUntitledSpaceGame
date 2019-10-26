@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2394684654425939273}
   - component: {fileID: 7309204734337235174}
   - component: {fileID: 2456027409345159909}
+  - component: {fileID: 6452285457819207704}
   m_Layer: 10
   m_Name: PBullet2
   m_TagString: PBullet
@@ -132,6 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6452285457819207704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561849750426767192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7861529081997326992
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +158,7 @@ GameObject:
   - component: {fileID: 7861529081997326996}
   - component: {fileID: 3754942282052762497}
   - component: {fileID: 7463823454466588957}
+  - component: {fileID: 4674338284038862213}
   m_Layer: 10
   m_Name: PBullet1
   m_TagString: PBullet
@@ -264,6 +278,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4674338284038862213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861529081997326992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8867711889150394415
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8867711889150394414}
   - component: {fileID: 4236323101071668316}
+  - component: {fileID: 7565517913493690724}
   m_Layer: 0
   m_Name: PBulletDouble
   m_TagString: Untagged
@@ -318,3 +345,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7565517913493690724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867711889150394415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
