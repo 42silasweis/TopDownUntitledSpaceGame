@@ -301,9 +301,9 @@ GameObject:
   - component: {fileID: 8867711889150394414}
   - component: {fileID: 4236323101071668316}
   - component: {fileID: 7565517913493690724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PBulletDouble
-  m_TagString: Untagged
+  m_TagString: PBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

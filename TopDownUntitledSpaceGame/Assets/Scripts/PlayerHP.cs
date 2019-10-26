@@ -13,17 +13,20 @@ public class PlayerHP : MonoBehaviour
     int initialHealth;
     public Text healthText;
     public Text liveText;
-    public Slider healthSlider;
+    //public Slider healthSlider;
     //public LevelManager levelManager;
+    public GameObject deathParticle;
+    GameObject player;
 
     private void Start()
     {
-        Lives = PlayerPrefs.GetInt("Lives"); //Sets current Lives to what is stored in the Lives playerPrefs
+        player = GameObject.FindGameObjectWithTag("Player");
+        //Lives = PlayerPrefs.GetInt("Lives"); //Sets current Lives to what is stored in the Lives playerPrefs
         //PlayerPrefs.SetInt("Lives", Lives);
         initialHealth = Health;
-        healthSlider.maxValue = Health;
-        healthSlider.value = Health;
-        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+        //healthSlider.maxValue = Health;
+        //healthSlider.value = Health;
+        healthText.text = "HP: " + Health + "/" + initialHealth;
         liveText.text = "LIVES: " + Lives;
         //levelManager = FindObjectOfType<LevelManager>();
     }
@@ -36,8 +39,8 @@ public class PlayerHP : MonoBehaviour
             if(Health >= initialHealth)
             {
                 Health = initialHealth;
-                healthSlider.value = Health;
-                healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+                //healthSlider.value = Health;
+                healthText.text = "HP: " + Health + "/" + initialHealth;
             }
         }
 
@@ -62,26 +65,27 @@ public class PlayerHP : MonoBehaviour
     void loselife()
     {
         Lives--;
-        PlayerPrefs.SetInt("Lives", Lives);
+        //PlayerPrefs.SetInt("Lives", Lives);
         liveText.text = "LIVES: " + Lives;
         Health = initialHealth;
     }
     void gethurt()
     {
         Health--;
-        healthSlider.value = Health;
-        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+        //healthSlider.value = Health;
+        healthText.text = "HP: " + Health + "/" + initialHealth;
+        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
     }
     void respawnplayer()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        healthSlider.value = Health;
+        //healthSlider.value = Health;
         healthText.text = "HEALTH: " + Health + "/" + initialHealth;
     }
     void getheart()
     {
         Health++;
-        healthSlider.value = Health;
+        //healthSlider.value = Health;
         healthText.text = "HEALTH: " + Health + "/" + initialHealth;
     }
 }

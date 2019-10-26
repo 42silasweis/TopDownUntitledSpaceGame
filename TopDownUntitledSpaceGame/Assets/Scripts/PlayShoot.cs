@@ -9,11 +9,9 @@ public class PlayShoot : MonoBehaviour
     public float bulletlifetime = 1.0f;
     public float shootDelay = 1.0f;
     float timer = 0;
-    float playerVelocity;
     void Start()
     {
-        //GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        //playerVelocity = Player.GetComponent<PlayerMovement>().moveDir;
+
     }
 
 

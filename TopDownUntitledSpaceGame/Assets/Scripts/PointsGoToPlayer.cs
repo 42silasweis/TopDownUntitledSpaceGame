@@ -45,7 +45,7 @@ public class PointsGoToPlayer : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
     }
 
-
+    //Blink function makes the coin blink for the a small amount of time before the point disappears
     void Blink()
     {
         if (timer >= destroyPoints * 0.5f)

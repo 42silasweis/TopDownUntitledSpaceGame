@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  destroyPoints: 2.5
+  destroyPoints: 4
   chaseSpeed: 4
   chaseTriggerDistance: 1
   willDespawn: 1

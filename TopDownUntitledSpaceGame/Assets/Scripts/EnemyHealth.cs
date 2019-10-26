@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int enemyHealth = 6;
     public GameObject heart;
     public bool objectInstantiated;
+    public GameObject deathParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.tag == "PBullet")
         {
             enemyHealth--;
+            Instantiate(deathParticle, transform.position, transform.rotation);
 
             if (objectInstantiated == false && enemyHealth <= 0)
             {
