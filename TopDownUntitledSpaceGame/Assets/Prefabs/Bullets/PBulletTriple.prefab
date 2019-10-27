@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
+  particleLifeTime: 1
 --- !u!1 &3692118967145980972
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
+  particleLifeTime: 1
 --- !u!1 &4745106878842051872
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745106878842051873}
   - component: {fileID: 5972927533698941840}
+  - component: {fileID: 6755631488492406518}
   m_Layer: 10
   m_Name: PBulletTriple
   m_TagString: PBullet
@@ -349,6 +352,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6755631488492406518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745106878842051872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1771ef4c1373c2642923d65a5d8f6e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6328598054390704031
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,3 +511,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
+  particleLifeTime: 1
