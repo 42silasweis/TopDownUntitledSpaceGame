@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletDestroy : MonoBehaviour
 {
     public GameObject deathParticle;
+    public float particleLifeTime = 1.0f;
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);

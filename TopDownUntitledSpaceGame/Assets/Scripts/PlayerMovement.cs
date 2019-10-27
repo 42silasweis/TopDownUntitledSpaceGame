@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float rotationSpeed = 2.0f;
     Vector3 playerMove;
+    public float delay = 1.0f;
+    float timer = 0;
+    public GameObject Particle;
 
     void Start()
     {
@@ -18,6 +21,15 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector2 moveDir = new Vector2(x, y);
         GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
+
+        //This is the particle trail that follows the player, set by GameObject
+        timer += Time.deltaTime;
+        if (Input.GetButton("Horizontal") && timer > delay || Input.GetButton("Vertical") && timer > delay)
+        {
+            timer = 0;
+            Instantiate(Particle, transform.position, transform.rotation);
+        }
+
 
         //This function is to make the player sprite face the direction it is moving
         //I believe it requires the sprite to be a Child of the main Player/Object and rotated 90 degrees

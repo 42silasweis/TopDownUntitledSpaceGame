@@ -10,6 +10,7 @@ TagManager:
   - Reticle
   - Enemy
   - Wall
+  - Particle
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - PBullet
   - EnBullet
   - Player
-  - 
+  - Particle
   - 
   - 
   - 

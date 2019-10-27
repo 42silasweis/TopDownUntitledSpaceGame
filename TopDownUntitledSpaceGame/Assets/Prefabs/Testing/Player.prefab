@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 6376771757226782601}
   - component: {fileID: 725651926}
   - component: {fileID: 6376771756501920228}
+  - component: {fileID: 1257708038}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -232,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6376771757226782602}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.1696, y: 0.022, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9072711115207571081}
@@ -277,7 +278,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -324,6 +325,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rotationSpeed: 6
+  delay: 1
+  Particle: {fileID: 463224640550823816, guid: 2338536c86459624ea191608da8b5bed, type: 3}
 --- !u!114 &6376771757226782601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4745106878842051872, guid: 9716285b6e09fc643931a2376940df73, type: 3}
   bulletSpeed: 8
-  bulletlifetime: 5
+  bulletlifetime: 3
   shootDelay: 0.1
 --- !u!60 &725651926
 PolygonCollider2D:
@@ -400,3 +403,23 @@ MonoBehaviour:
   Coins: 0
   neededCoins: 100000000
   coinText: {fileID: 0}
+--- !u!114 &1257708038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376771757226782602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4274d1a426d899949b3bed3a230411e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  Health: 10
+  Lives: 10
+  initialLives: 10
+  healthText: {fileID: 0}
+  liveText: {fileID: 0}
+  deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
+    type: 3}

@@ -18,6 +18,11 @@ public class PointsGoToPlayer : MonoBehaviour
     // This is not nonsense code right?
     void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            Chase();
+        }
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         if (chaseDirection.magnitude < chaseTriggerDistance)
         {
@@ -27,6 +32,10 @@ public class PointsGoToPlayer : MonoBehaviour
         {
             willDespawn = true;
             Blink();
+        }
+        if (player == null)
+        {
+            Chase();
         }
 
         //Timer will make points despawn after the time set in destroyPoints passes
