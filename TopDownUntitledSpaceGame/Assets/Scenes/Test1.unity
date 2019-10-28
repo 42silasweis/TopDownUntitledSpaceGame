@@ -17313,7 +17313,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1af94d1f091c8d34688ef73b3a61cb2e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -30498,7 +30498,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1af94d1f091c8d34688ef73b3a61cb2e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -30567,7 +30567,7 @@ GameObject:
   - component: {fileID: 7000644466185287279}
   - component: {fileID: 7466705066739415699}
   - component: {fileID: 7466705066739415701}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Enemylvl2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30618,7 +30618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07cbd5b5ab926249bcc21d351f3736d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHeight: 0.5
+  floatHeight: 2
   liftForce: 1
   damping: 0
   player: {fileID: 1739410760}
