@@ -30,6 +30,29 @@ public class PlayerHP : MonoBehaviour
         liveText.text = "LIVES: " + Lives;
         //levelManager = FindObjectOfType<LevelManager>();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "EnemyShoot" || collision.gameObject.tag == "Enemy")
+        {
+            gethurt();
+            if (Health < 1)
+            {
+                loselife();
+
+                if (Lives < 0)
+                {
+                    //SceneManager.LoadScene("GameOver");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+                else
+                {
+                    respawnplayer();
+                }
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
         {
         if (collision.gameObject.tag == "Coin")
@@ -43,24 +66,6 @@ public class PlayerHP : MonoBehaviour
                 healthText.text = "HP: " + Health + "/" + initialHealth;
             }
         }
-
-        if (collision.gameObject.tag == "EnemyShoot" || collision.gameObject.tag == "Enemy")
-            {
-            gethurt();
-                    if (Health < 1)
-                    {
-                    loselife();
-
-                        if (Lives < 0)
-                        {
-                            SceneManager.LoadScene("GameOver");
-                        }
-                        else
-                        {
-                        respawnplayer();
-                        }
-                    }
-            }
         }
     void loselife()
     {
