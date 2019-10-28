@@ -30459,22 +30459,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.21595925, y: 0.15806878}
-      - {x: 0.20359598, y: 0.18739426}
-      - {x: 0.1933719, y: 0.19399472}
-      - {x: 0.18742669, y: 0.20370074}
-      - {x: 0.15625839, y: 0.21875516}
-      - {x: -0.09769013, y: 0.21878962}
-      - {x: -0.20314191, y: 0.09910859}
-      - {x: -0.2031606, y: -0.09377069}
-      - {x: -0.100595556, y: -0.21899104}
-      - {x: 0.15632443, y: -0.21882385}
-      - {x: 0.18757327, y: -0.20415226}
-      - {x: 0.19464254, y: -0.19380115}
-      - {x: 0.20382737, y: -0.1883509}
-      - {x: 0.21118361, y: -0.16444772}
-      - {x: 0.34356847, y: -0.034257386}
-      - {x: 0.34389177, y: 0.035306003}
+    - - {x: 0.12598309, y: 0.3750978}
+      - {x: 0.06923539, y: 0.37475857}
+      - {x: -0.12693676, y: 0.22931916}
+      - {x: -0.2501951, y: 0.05009787}
+      - {x: -0.2511869, y: 0.027153831}
+      - {x: -0.25294983, y: 0.017941337}
+      - {x: -0.25781494, y: 0.015510831}
+      - {x: -0.28127667, y: 0.015939984}
+      - {x: -0.2812726, y: -0.015678404}
+      - {x: -0.25794026, y: -0.01576628}
+      - {x: -0.2517455, y: -0.017822128}
+      - {x: -0.25018147, y: -0.02570016}
+      - {x: -0.24999209, y: -0.049215723}
+      - {x: -0.1269068, y: -0.23233481}
+      - {x: 0.071882516, y: -0.3753941}
+      - {x: 0.1250376, y: -0.37501538}
+      - {x: 0.35941803, y: -0.1812887}
+      - {x: 0.3588104, y: -0.045065876}
+      - {x: 0.39746282, y: -0.02260208}
+      - {x: 0.404332, y: 0.006137575}
+      - {x: 0.39746144, y: 0.03482001}
+      - {x: 0.36030632, y: 0.054849893}
+      - {x: 0.35887036, y: 0.17829826}
 --- !u!50 &7466705066739415696
 Rigidbody2D:
   serializedVersion: 4
@@ -30559,6 +30566,7 @@ GameObject:
   - component: {fileID: 7466705066739415700}
   - component: {fileID: 7000644466185287279}
   - component: {fileID: 7466705066739415699}
+  - component: {fileID: 7466705066739415701}
   m_Layer: 8
   m_Name: Enemylvl2
   m_TagString: Enemy
@@ -30573,7 +30581,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466705066739415698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c23cbd118b03014f9807ed7786915ab, type: 3}
   m_Name: 
@@ -30598,6 +30606,24 @@ MonoBehaviour:
   objectInstantiated: 0
   deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
     type: 3}
+--- !u!114 &7466705066739415701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466705066739415698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07cbd5b5ab926249bcc21d351f3736d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatHeight: 0.5
+  liftForce: 1
+  damping: 0
+  player: {fileID: 1739410760}
+  chaseSpeed: 1
+  rotationSpeed: 3
 --- !u!4 &7466705066739415702
 Transform:
   m_ObjectHideFlags: 0
