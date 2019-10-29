@@ -19,17 +19,12 @@ public class SpawnScript : MonoBehaviour
     float spawnDistanceY2;
     void Start()
     {
+        //Turns the the spawners transform position and makes a value that is 
+        //minuss the spawnRange into a float that can be used in the new Vector2 later
         spawnDistanceX = transform.position.x;
         spawnDistanceY = transform.position.y;
-
         spawnDistanceX2 = transform.position.x - spawnRange;
         spawnDistanceY2 = transform.position.y - spawnRange;
-
-        Debug.Log(spawnDistanceX);
-        Debug.Log(spawnDistanceY);
-        Debug.Log(spawnDistanceX2);
-        Debug.Log(spawnDistanceY2);
-
 
         //spawnPosition = new Vector2(Random.Range(-spawnDistanceX, spawnDistanceX), Random.Range(-spawnDistanceY, spawnDistanceY));
         //spawnPosition.Normalize();

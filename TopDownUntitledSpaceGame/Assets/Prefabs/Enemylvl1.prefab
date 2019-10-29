@@ -202,7 +202,7 @@ MonoBehaviour:
   enemyHealth: 1
   heart: {fileID: 7984230172535116162, guid: 7be8de715e2ada64aba019d34eec7292, type: 3}
   objectInstantiated: 0
-  deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
+  deathParticle: {fileID: 5802417703908736032, guid: e355e0c41b5c6ea44bb2801ecb19a181,
     type: 3}
 --- !u!114 &7728667893335742185
 MonoBehaviour:
