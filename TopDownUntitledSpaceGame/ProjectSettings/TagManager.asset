@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Particle
   - MassKillEnemies
+  - PlayerSprite
   layers:
   - Default
   - TransparentFX

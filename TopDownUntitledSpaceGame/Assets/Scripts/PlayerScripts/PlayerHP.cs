@@ -16,12 +16,17 @@ public class PlayerHP : MonoBehaviour
     public Text liveText;
     //public LevelManager levelManager;
     public GameObject deathParticle;
+    public GameObject respawnParticles;
     GameObject MassKillEnemies;
     GameObject player;
+    GameObject PlayerSprite;
+    bool hasRespawned;
 
 
     private void Start()
     {
+        hasRespawned = true;
+        PlayerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         MassKillEnemies = GameObject.FindGameObjectWithTag("MassKillEnemies");
         player = GameObject.FindGameObjectWithTag("Player");
         MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
@@ -35,11 +40,13 @@ public class PlayerHP : MonoBehaviour
     private void Update()
     {
         deathTimer += Time.deltaTime;
-        if (deathTimer > 2 && Health >= 0)
+        if (deathTimer > 2 && Health >= 0 && hasRespawned == false)
         {
+            hasRespawned = true;
+            Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
             Health = initialHealth;
             healthText.text = "HEALTH: " + Health + "/" + initialHealth;
-            GetComponent<SpriteRenderer>().enabled = true;
+            PlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<PlayerMovement>().enabled = true;
             GetComponentInChildren<PlayShoot>().enabled = true;
@@ -99,8 +106,9 @@ public class PlayerHP : MonoBehaviour
     }
     void respawnplayer()
     {
+        hasRespawned = false;
         MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
-        GetComponent<SpriteRenderer>().enabled = false;
+        PlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponentInChildren<PlayShoot>().enabled = false;

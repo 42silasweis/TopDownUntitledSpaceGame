@@ -8,12 +8,22 @@ public class EnemyHealth : MonoBehaviour
     public GameObject heart;
     public bool objectInstantiated;
     public GameObject deathParticle;
+
     // Start is called before the first frame update
     void Start()
     {
 
     }
- 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MassKillEnemies")
+        {
+            enemyHealth--;
+            Instantiate(deathParticle, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PBullet")
@@ -29,21 +39,7 @@ public class EnemyHealth : MonoBehaviour
                 dropheart.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
             }
-            if (collision.gameObject.tag == "MassKillEnemies")
-            {
-                enemyHealth--;
 
-                if (enemyHealth <= 0)
-                {
-                    Instantiate(deathParticle, transform.position, transform.rotation);
-                    Destroy(gameObject);
-                  
-                }
-            }
-        }
-            // Update is called once per frame
-            void Update()
-        {
 
         }
     }
