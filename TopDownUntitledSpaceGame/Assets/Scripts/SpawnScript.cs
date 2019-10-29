@@ -8,11 +8,15 @@ public class SpawnScript : MonoBehaviour
     public GameObject enemy;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
-    public float spawnTime = 10;
+
     float time;
     float time2;
+    public float spawnTime = 10;
+    public float spawnTimeFrame = 30.0f;
     public float spawnDelay = 0.6f;
     public float spawnRange = 1.5f;
+    public float LevelClock;
+
     float spawnDistanceX;
     float spawnDistanceY;
     float spawnDistanceX2;
@@ -33,6 +37,9 @@ public class SpawnScript : MonoBehaviour
     {
         time += Time.deltaTime;
         time2 += Time.deltaTime;
+        //spawnTimeFrame += Time.deltaTime;
+        LevelClock += Time.deltaTime;
+
         if (time < spawnTime && time2 > spawnDelay)
         {
             time2 = 0;

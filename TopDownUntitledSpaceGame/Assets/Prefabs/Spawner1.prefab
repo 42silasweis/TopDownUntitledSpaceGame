@@ -97,9 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7728667893335742188, guid: c5a8d9103ca51474baaabddbc8ee802f, type: 3}
-  spawnDistance: 20
-  spawnPosition: {x: 0, y: 0}
-  spawnTime: 10
+  spawnPosition: {x: 0, y: 0, z: 0}
+  spawnTime: 1
+  spawnTimeFrame: 30
+  spawnDelay: 0.06
+  spawnRange: 2
+  LevelClock: 0
 --- !u!114 &698083963733624795
 MonoBehaviour:
   m_ObjectHideFlags: 0
