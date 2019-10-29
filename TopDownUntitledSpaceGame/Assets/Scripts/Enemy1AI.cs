@@ -10,8 +10,10 @@ public class Enemy1AI : MonoBehaviour
     public float rotationSpeed = 3.0f;
     float startTimer;
     Vector3 startPosition;
+    bool spawnedIn = false;
     void Start()
     {
+        GetComponent<PolygonCollider2D>().enabled = false;
         startTimer = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -23,6 +25,11 @@ public class Enemy1AI : MonoBehaviour
         if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > 1)
         {
             Chase();
+        }
+
+        if(startTimer > 1 && spawnedIn == false)
+        {
+            GetComponent<PolygonCollider2D>().enabled = true;
         }
 
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;

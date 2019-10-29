@@ -11,12 +11,12 @@ public class SpawnScript : MonoBehaviour
     public float spawnTime = 10;
     float time;
     float time2;
-    float spawnDelay = 0.6f;
+    public float spawnDelay = 0.6f;
     public float spawnRange = 1.5f;
-    public float spawnDistanceX;
-    public float spawnDistanceY;
-    public float spawnDistanceX2;
-    public float spawnDistanceY2;
+    float spawnDistanceX;
+    float spawnDistanceY;
+    float spawnDistanceX2;
+    float spawnDistanceY2;
     void Start()
     {
         spawnDistanceX = transform.position.x;
@@ -24,6 +24,7 @@ public class SpawnScript : MonoBehaviour
 
         spawnDistanceX2 = transform.position.x - spawnRange;
         spawnDistanceY2 = transform.position.y - spawnRange;
+
         Debug.Log(spawnDistanceX);
         Debug.Log(spawnDistanceY);
         Debug.Log(spawnDistanceX2);
@@ -37,11 +38,11 @@ public class SpawnScript : MonoBehaviour
     {
         time += Time.deltaTime;
         time2 += Time.deltaTime;
-        if (time < 90 && time2 > spawnDelay)
+        if (time < spawnTime && time2 > spawnDelay)
         {
             time2 = 0;
-            spawnPosition = new Vector3(Random.Range(-transform.position.x, transform.position.x), Random.Range(-transform.position.y, transform.position.y));
-            spawnPosition.Normalize();
+            spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
+            //spawnPosition.Normalize();
             Instantiate(enemy, spawnPosition, Quaternion.identity);
             Debug.Log(spawnPosition);
         }
