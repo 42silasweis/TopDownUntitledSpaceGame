@@ -4,36 +4,49 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
 {
-    // Variable to store the enemy prefab
+
     public GameObject enemy;
-
-// Variable to know how fast we should create new enemies
-    public float spawnTime = 2;
-
+    //public float spawnDistance = 3.0f;
+    public Vector3 spawnPosition;
+    public float spawnTime = 10;
+    float time;
+    float time2;
+    float spawnDelay = 0.6f;
+    public float spawnRange = 1.5f;
+    public float spawnDistanceX;
+    public float spawnDistanceY;
+    public float spawnDistanceX2;
+    public float spawnDistanceY2;
     void Start()
     {
-        // Call the 'addEnemy' function in 0 second
-        // Then every 'spawnTime' seconds
-        InvokeRepeating("addEnemy", 0, spawnTime);
-    }
+        spawnDistanceX = transform.position.x;
+        spawnDistanceY = transform.position.y;
 
-    // New function to spawn an enemy
-    void addEnemy()
+        spawnDistanceX2 = transform.position.x - spawnRange;
+        spawnDistanceY2 = transform.position.y - spawnRange;
+        Debug.Log(spawnDistanceX);
+        Debug.Log(spawnDistanceY);
+        Debug.Log(spawnDistanceX2);
+        Debug.Log(spawnDistanceY2);
+
+
+        //spawnPosition = new Vector2(Random.Range(-spawnDistanceX, spawnDistanceX), Random.Range(-spawnDistanceY, spawnDistanceY));
+        //spawnPosition.Normalize();
+    }
+    void Update()
     {
-        // Get the renderer component of the spawn object
-        rd = GetComponent<SpriteRenderer>();
-
-        // Position of the left edge of the spawn object
-        // It's: (position of the center) minus (half the width)
-        x1 = transform.position.x - rd.bounds.size.x / 2;
-
-        // Same for the right edge
-        x2 = transform.position.x + rd.bounds.size.x / 2;
-
-        // Randomly pick a point within the spawn object
-        spawnPoint = Vector2(Random.Range(x1, x2), transform.position.y);
-
-        // Create an enemy at the 'spawnPoint' position
-        Instantiate(enemy, spawnPoint, Quaternion.identity);
+        time += Time.deltaTime;
+        time2 += Time.deltaTime;
+        if (time < 90 && time2 > spawnDelay)
+        {
+            time2 = 0;
+            spawnPosition = new Vector3(Random.Range(-transform.position.x, transform.position.x), Random.Range(-transform.position.y, transform.position.y));
+            spawnPosition.Normalize();
+            Instantiate(enemy, spawnPosition, Quaternion.identity);
+            Debug.Log(spawnPosition);
+        }
+        //Debug.Log(time);
+        //Debug.Log(time2);
     }
+
 }

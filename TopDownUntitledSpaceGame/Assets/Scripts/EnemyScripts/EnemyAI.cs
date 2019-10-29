@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float chaseSpeed = 2.0f;
     public float paceSpeed = 1.5f;
     public float paceDistance = 3.0f;
@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     {
         paceTimer = 0;
         startPosition = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     // This is not nonsense code right?
     void Update()

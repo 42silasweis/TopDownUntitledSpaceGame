@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7728667893335742186}
   - component: {fileID: 7728667893335742185}
   - component: {fileID: 7924619279610534417}
+  - component: {fileID: 8899946517538665889}
   m_Layer: 8
   m_Name: Enemylvl1
   m_TagString: Enemy
@@ -109,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7728667893335742188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.489, y: 1.677, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1543641033}
@@ -210,15 +211,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7728667893335742188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1973edab90135a042a5528f21acec05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   chaseSpeed: 0.8
   paceSpeed: 0.8
-  paceDistance: 3
+  paceDistance: 0
   chaseTriggerDistance: 20
   farFromHome: 50
   paceDirection: {x: 0, y: 0}
@@ -267,3 +267,18 @@ PolygonCollider2D:
       - {x: 0.21118361, y: -0.16444772}
       - {x: 0.34356847, y: -0.034257386}
       - {x: 0.34389177, y: 0.035306003}
+--- !u!114 &8899946517538665889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728667893335742188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d49b4d5fb489934b9c9af39d75797da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 0.8
+  chaseTriggerDistance: 50
+  rotationSpeed: 2
