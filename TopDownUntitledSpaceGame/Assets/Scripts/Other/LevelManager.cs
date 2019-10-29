@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     }
     public void RespawnPlayer()
     {
-        Debug.Log("Player Respawn");
+        //Debug.Log("Player Respawn");
         player.transform.position = currentCheckpoint.transform.position;
     }
 }

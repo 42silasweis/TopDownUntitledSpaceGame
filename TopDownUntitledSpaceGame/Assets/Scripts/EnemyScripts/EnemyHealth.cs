@@ -29,9 +29,20 @@ public class EnemyHealth : MonoBehaviour
                 dropheart.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
             }
+            if (collision.gameObject.tag == "MassKillEnemies")
+            {
+                enemyHealth--;
+
+                if (enemyHealth <= 0)
+                {
+                    Instantiate(deathParticle, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                  
+                }
+            }
         }
-        // Update is called once per frame
-        void Update()
+            // Update is called once per frame
+            void Update()
         {
 
         }

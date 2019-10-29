@@ -11,21 +11,40 @@ public class PlayerHP : MonoBehaviour
     public int Lives = 10;
     public int initialLives = 10;
     int initialHealth;
+    public float deathTimer;
     public Text healthText;
     public Text liveText;
-    public LevelManager levelManager;
+    //public LevelManager levelManager;
     public GameObject deathParticle;
+    GameObject MassKillEnemies;
     GameObject player;
+
 
     private void Start()
     {
+        MassKillEnemies = GameObject.FindGameObjectWithTag("MassKillEnemies");
         player = GameObject.FindGameObjectWithTag("Player");
+        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
         //Lives = PlayerPrefs.GetInt("Lives"); //Sets current Lives to what is stored in the Lives playerPrefs
         //PlayerPrefs.SetInt("Lives", Lives);
         initialHealth = Health;
         healthText.text = "HP: " + Health + "/" + initialHealth;
         liveText.text = "LIVES: " + Lives;
-        levelManager = FindObjectOfType<LevelManager>();
+        //levelManager = FindObjectOfType<LevelManager>();
+    }
+    private void Update()
+    {
+        deathTimer += Time.deltaTime;
+        if (deathTimer > 2 && Health >= 0)
+        {
+            Health = initialHealth;
+            healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+            GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<PolygonCollider2D>().enabled = true;
+            GetComponent<PlayerMovement>().enabled = true;
+            GetComponentInChildren<PlayShoot>().enabled = true;
+            MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,17 +54,19 @@ public class PlayerHP : MonoBehaviour
             gethurt();
             if (Health < 1)
             {
+                deathTimer = 0;
+                respawnplayer();
                 loselife();
-                levelManager.RespawnPlayer();
+                //levelManager.RespawnPlayer();
 
                 if (Lives < 0)
                 {
                     //SceneManager.LoadScene("GameOver");
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
                 else
                 {
-                    respawnplayer();
+                    //respawnplayer();
                 }
             }
         }
@@ -68,7 +89,7 @@ public class PlayerHP : MonoBehaviour
     {
         Lives--;
         liveText.text = "LIVES: " + Lives;
-        Health = initialHealth;
+        //Health = initialHealth;
     }
     void gethurt()
     {
@@ -78,7 +99,14 @@ public class PlayerHP : MonoBehaviour
     }
     void respawnplayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponentInChildren<PlayShoot>().enabled = false;
+        
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
     }
     void getheart()
     {
