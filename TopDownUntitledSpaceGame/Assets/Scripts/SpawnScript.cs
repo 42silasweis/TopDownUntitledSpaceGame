@@ -11,12 +11,14 @@ public class SpawnScript : MonoBehaviour
 
     float time;
     float time2;
-    public float spawnTime = 10;
-    public float spawnTimeFrame = 30.0f;
     public float spawnDelay = 0.6f;
     public float spawnRange = 1.5f;
-    public float LevelClock;
-
+    float LevelClock;
+    int enemyCount = 0;
+    int wave = 0;
+    public int maxWaves = 6;
+    public float waveDelay = 5;
+    public int maxEnemies = 5;
     float spawnDistanceX;
     float spawnDistanceY;
     float spawnDistanceX2;
@@ -40,13 +42,21 @@ public class SpawnScript : MonoBehaviour
         //spawnTimeFrame += Time.deltaTime;
         LevelClock += Time.deltaTime;
 
-        if (time < spawnTime && time2 > spawnDelay)
+        if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves)
         {
             time2 = 0;
             spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
             //spawnPosition.Normalize();
             Instantiate(enemy, spawnPosition, Quaternion.identity);
+            enemyCount++;
             Debug.Log(spawnPosition);
+        }
+        if(enemyCount == maxEnemies)
+        {
+            wave++;
+            time = 0;
+            enemyCount = 0;
+            maxEnemies += 1;
         }
         //Debug.Log(time);
         //Debug.Log(time2);

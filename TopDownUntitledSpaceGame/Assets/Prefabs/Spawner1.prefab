@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 698083963733624773}
   - component: {fileID: 698083963733624794}
   - component: {fileID: 698083963733624772}
-  - component: {fileID: 698083963733624795}
   - component: {fileID: 698083963733624793}
   - component: {fileID: 698083963733624792}
   m_Layer: 5
@@ -98,34 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7728667893335742188, guid: c5a8d9103ca51474baaabddbc8ee802f, type: 3}
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnTime: 1
-  spawnTimeFrame: 30
-  spawnDelay: 0.06
-  spawnRange: 2
-  LevelClock: 0
---- !u!114 &698083963733624795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698083963733624774}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c3e248a9af0fd4b921b1369ca25910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paceSpeed: 3
-  paceDistance: 3
-  farFromHome: 1.5
-  paceDirection: {x: 0, y: 0}
-  wanderRange: 3
-  paceFrequency: 3
-  paceTimer: 3
-  rotationSpeed: 2
-  enemy: {fileID: 7728667893335742188, guid: c5a8d9103ca51474baaabddbc8ee802f, type: 3}
-  spawnTime: 10
-  spawnDelay: 10
+  spawnDelay: 0.05
+  spawnRange: 3
+  maxWaves: 6
+  waveDelay: 5
+  maxEnemies: 5
 --- !u!50 &698083963733624793
 Rigidbody2D:
   serializedVersion: 4

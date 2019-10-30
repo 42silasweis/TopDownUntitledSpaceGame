@@ -8,6 +8,7 @@ public class Enemy1AI : MonoBehaviour
     public float chaseSpeed = 0.6f;
     public float chaseTriggerDistance = 50.0f;
     public float rotationSpeed = 3.0f;
+    float afterSpawnDelay = 0.8f;
     float startTimer;
     Vector3 startPosition;
     bool spawnedIn = false;
@@ -22,14 +23,15 @@ public class Enemy1AI : MonoBehaviour
     {
         startTimer += Time.deltaTime;
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-        if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > 1)
+        if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > afterSpawnDelay)
         {
             Chase();
         }
 
-        if(startTimer > 1 && spawnedIn == false)
+        if(startTimer > afterSpawnDelay && spawnedIn == false)
         {
             GetComponent<PolygonCollider2D>().enabled = true;
+            spawnedIn = true;
         }
 
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;
