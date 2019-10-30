@@ -8,24 +8,25 @@ public class SpawnScript : MonoBehaviour
     public GameObject enemy;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
-
     float time;
     float time2;
     public float spawnDelay = 0.6f;
     public float spawnRange = 1.5f;
-    float LevelClock;
     int enemyCount = 0;
     int wave = 0;
     public int maxWaves = 6;
     public float waveDelay = 5;
     public int maxEnemies = 5;
+    int inititalMaxEnemies;
     public string wave2;
+
     float spawnDistanceX;
     float spawnDistanceY;
     float spawnDistanceX2;
     float spawnDistanceY2;
     void Start()
     {
+        inititalMaxEnemies = maxEnemies;
         //Turns the the spawners transform position and makes a value that is 
         //minuss the spawnRange into a float that can be used in the new Vector2 later
         spawnDistanceX = transform.position.x;
@@ -40,8 +41,6 @@ public class SpawnScript : MonoBehaviour
     {
         time += Time.deltaTime;
         time2 += Time.deltaTime;
-        //spawnTimeFrame += Time.deltaTime;
-        LevelClock += Time.deltaTime;
 
         if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves)
         {
@@ -61,6 +60,17 @@ public class SpawnScript : MonoBehaviour
         }
         //Debug.Log(time);
         //Debug.Log(time2);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MassKillEnemies")
+        {
+            maxEnemies = inititalMaxEnemies;
+            time = 0;
+            time2 = 0;
+            enemyCount = 0;
+            wave = 0;
+        }
     }
 
 }

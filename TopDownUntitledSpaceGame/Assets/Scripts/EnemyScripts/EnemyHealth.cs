@@ -42,8 +42,12 @@ public class EnemyHealth : MonoBehaviour
                 droppedPointMultiplier.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
             }
-
-
+        }
+        if (collision.gameObject.tag == "MassKillEnemies")
+        {
+            enemyHealth--;
+            Instantiate(deathParticle, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

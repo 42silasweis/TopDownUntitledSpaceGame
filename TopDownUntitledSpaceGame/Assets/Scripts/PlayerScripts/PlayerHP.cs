@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class PlayerHP : MonoBehaviour
 {
     public List<Transform> enemyList = new List<Transform>();
+    public float respawnAfter = 2.0f;
+    public float clearEnemiesFor = 3.0f;
+    float clearEnemies;
     public int Health = 10;
     public int Lives = 10;
-    public int initialLives = 10;
+    int initialLives;
     int initialHealth;
     public float deathTimer;
     public Text healthText;
@@ -21,11 +24,15 @@ public class PlayerHP : MonoBehaviour
     GameObject player;
     GameObject PlayerSprite;
     bool hasRespawned;
+    bool massDestroy;
 
 
     private void Start()
     {
+
+        initialLives = Lives;
         hasRespawned = true;
+        massDestroy = false;
         PlayerSprite = GameObject.FindGameObjectWithTag("PlayerSprite");
         MassKillEnemies = GameObject.FindGameObjectWithTag("MassKillEnemies");
         player = GameObject.FindGameObjectWithTag("Player");
@@ -39,8 +46,9 @@ public class PlayerHP : MonoBehaviour
     }
     private void Update()
     {
+        clearEnemies += Time.deltaTime;
         deathTimer += Time.deltaTime;
-        if (deathTimer > 2 && Health >= 0 && hasRespawned == false)
+        if (deathTimer > respawnAfter && Health >= 0 && hasRespawned == false)
         {
             hasRespawned = true;
             Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
@@ -50,7 +58,12 @@ public class PlayerHP : MonoBehaviour
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<PlayerMovement>().enabled = true;
             GetComponentInChildren<PlayShoot>().enabled = true;
+            //MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        if (clearEnemies > clearEnemiesFor && massDestroy == true)
+        {
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
+            massDestroy = false;
         }
     }
 
@@ -59,21 +72,17 @@ public class PlayerHP : MonoBehaviour
         if (collision.gameObject.tag == "EnemyShoot" || collision.gameObject.tag == "Enemy")
         {
             gethurt();
+
             if (Health < 1)
             {
                 deathTimer = 0;
                 respawnplayer();
                 loselife();
-                //levelManager.RespawnPlayer();
 
                 if (Lives < 0)
                 {
                     //SceneManager.LoadScene("GameOver");
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
-                else
-                {
-                    //respawnplayer();
                 }
             }
         }
@@ -106,13 +115,15 @@ public class PlayerHP : MonoBehaviour
     }
     void respawnplayer()
     {
+        clearEnemies = 0;
+        massDestroy = true;
         hasRespawned = false;
-        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
         PlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponentInChildren<PlayShoot>().enabled = false;
-        
+        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
+
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         healthText.text = "HEALTH: " + Health + "/" + initialHealth;
     }

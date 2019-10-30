@@ -21320,7 +21320,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -32031,6 +32031,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner1
       objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624774, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624774, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32086,6 +32096,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624792, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
 --- !u!1 &1518653416
@@ -32122,7 +32142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -139, y: -36.950012}
+  m_AnchoredPosition: {x: -139, y: -36.950073}
   m_SizeDelta: {x: 226.5, y: 72.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518653418
@@ -32339,10 +32359,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1510541732, guid: 7be8de715e2ada64aba019d34eec7292, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be8de715e2ada64aba019d34eec7292, type: 3}
 --- !u!1001 &1958571720
@@ -32417,6 +32433,16 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 500111156}
+    - target: {fileID: 6376771756501920228, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: multiplierText
+      value: 
+      objectReference: {fileID: 6899151}
+    - target: {fileID: 6376771756501920228, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: pointsText
+      value: 
+      objectReference: {fileID: 500111156}
     - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
       propertyPath: healthText
       value: 
@@ -32425,7 +32451,8 @@ PrefabInstance:
       propertyPath: liveText
       value: 
       objectReference: {fileID: 1518653418}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 822941918, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
 --- !u!1 &2084712451
 GameObject:
@@ -32461,7 +32488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 90, y: -45.549988}
+  m_AnchoredPosition: {x: 90, y: -45.549927}
   m_SizeDelta: {x: 295.9, y: 89.100006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084712453

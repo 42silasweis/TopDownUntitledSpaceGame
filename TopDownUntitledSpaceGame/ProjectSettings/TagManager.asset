@@ -13,12 +13,13 @@ TagManager:
   - Particle
   - MassKillEnemies
   - PlayerSprite
-  - PointMiltiplier
   - Plus10Points
   - Plus20Points
   - Plus40Points
   - Plus80Points
   - Plus5Points
+  - PointMultiplier
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - Player
   - Particle
   - BackgroundImage
-  - 
+  - Spawner
   - 
   - 
   - 

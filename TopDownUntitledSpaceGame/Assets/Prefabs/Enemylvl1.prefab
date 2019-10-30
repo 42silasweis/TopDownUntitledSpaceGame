@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 7728667893335742191}
   - component: {fileID: 7728667893335742190}
   - component: {fileID: 7728667893335742186}
-  - component: {fileID: 7728667893335742185}
   - component: {fileID: 7924619279610534417}
   - component: {fileID: 8899946517538665889}
   m_Layer: 8
@@ -206,28 +205,6 @@ MonoBehaviour:
   points: {fileID: 3324035654004855513, guid: 1aa0131d6a5be764db86211815d958e3, type: 3}
   deathParticle: {fileID: 5802417703908736032, guid: e355e0c41b5c6ea44bb2801ecb19a181,
     type: 3}
---- !u!114 &7728667893335742185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728667893335742188}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1973edab90135a042a5528f21acec05c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseSpeed: 0.8
-  paceSpeed: 0.8
-  paceDistance: 0
-  chaseTriggerDistance: 20
-  farFromHome: 50
-  paceDirection: {x: 0, y: 0}
-  wanderRange: 0
-  paceFrequency: 4
-  paceTimer: 0
-  rotationSpeed: 3
 --- !u!60 &7924619279610534417
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -283,4 +260,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseSpeed: 0.8
   chaseTriggerDistance: 50
-  rotationSpeed: 2
+  rotationSpeed: 4
