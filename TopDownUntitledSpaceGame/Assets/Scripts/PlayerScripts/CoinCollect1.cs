@@ -6,29 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class CoinCollect1 : MonoBehaviour
 {
-    public int Coins = 0;
+    public int Points = 0;
     int initialCoins = 0;
-    public int neededCoins;
-    public Text coinText;
+    public int neededPoints;
+    public Text pointsText;
+    public Text multiplierText;
     int pointMultuiplier;
+    public int maxMultiplier = 100;
 
     void Start()
     {
-        coinText.text = "SCORE: " + Coins; // + "/" + neededCoins;
+        pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "PointMulitplier")
         {
-
+            pointMultuiplier++;
+            if(pointMultuiplier >= maxMultiplier)
+            {
+                pointMultuiplier = maxMultiplier;
+            }
+            multiplierText.text = "MULTIPLIER: " + pointMultuiplier;
         }
         if (collision.gameObject.tag == "Points")
         {
-            Coins += 10;
-            coinText.text = "SCORE: " + Coins; // + "/" + neededCoins;
+            Points += 10;
+            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
             Destroy(collision.gameObject);
 
-            if(Coins >= neededCoins)
+            if(Points >= neededPoints)
             {
                 //SceneManager.LoadScene("Win");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
