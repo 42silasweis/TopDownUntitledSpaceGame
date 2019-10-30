@@ -13,6 +13,12 @@ TagManager:
   - Particle
   - MassKillEnemies
   - PlayerSprite
+  - PointMiltiplier
+  - Plus10Points
+  - Plus20Points
+  - Plus40Points
+  - Plus80Points
+  - Plus5Points
   layers:
   - Default
   - TransparentFX

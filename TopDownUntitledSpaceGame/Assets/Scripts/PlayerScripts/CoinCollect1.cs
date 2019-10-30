@@ -10,6 +10,7 @@ public class CoinCollect1 : MonoBehaviour
     int initialCoins = 0;
     public int neededCoins;
     public Text coinText;
+    int pointMultuiplier;
 
     void Start()
     {
@@ -17,6 +18,10 @@ public class CoinCollect1 : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "PointMulitplier")
+        {
+
+        }
         if (collision.gameObject.tag == "Points")
         {
             Coins += 10;

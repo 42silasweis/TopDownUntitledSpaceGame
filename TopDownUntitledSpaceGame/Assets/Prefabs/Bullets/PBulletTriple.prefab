@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6892182607936873961}
   - component: {fileID: 1792431005132521450}
   - component: {fileID: 6771533899183160425}
+  - component: {fileID: 3759688854776813103}
+  - component: {fileID: 3705558688946091300}
   m_Layer: 10
   m_Name: PBullet2
   m_TagString: PBullet
@@ -73,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -4523387898352911393, guid: 608832424a297e946b4bd923113e4a9c,
+    type: 3}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +94,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821694695456739927}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -148,6 +151,41 @@ MonoBehaviour:
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
   particleLifeTime: 1
+--- !u!95 &3759688854776813103
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821694695456739927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af6380981ff2b1043a06e843a8193dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &3705558688946091300
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821694695456739927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008419618, y: 0.16387242}
+  m_Size: {x: 0.07981399, y: 0.32336354}
+  m_Direction: 0
 --- !u!1 &3692118967145980972
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +200,8 @@ GameObject:
   - component: {fileID: 6895195338019193455}
   - component: {fileID: 1792431005085184052}
   - component: {fileID: 877917672308100999}
+  - component: {fileID: 3811962042430383766}
+  - component: {fileID: 2677373161674288013}
   m_Layer: 10
   m_Name: PBullet3
   m_TagString: PBullet
@@ -221,7 +261,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -4523387898352911393, guid: 608832424a297e946b4bd923113e4a9c,
+    type: 3}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,7 +280,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3692118967145980972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -296,6 +337,41 @@ MonoBehaviour:
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
   particleLifeTime: 1
+--- !u!95 &3811962042430383766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692118967145980972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af6380981ff2b1043a06e843a8193dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2677373161674288013
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692118967145980972}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008419618, y: 0.16387242}
+  m_Size: {x: 0.07981399, y: 0.32336354}
+  m_Direction: 0
 --- !u!1 &4745106878842051872
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +441,8 @@ GameObject:
   - component: {fileID: 6727993603307609106}
   - component: {fileID: 1069127131892328078}
   - component: {fileID: 283659202420969442}
+  - component: {fileID: 5637391177122726494}
+  - component: {fileID: 3290274451883649011}
   m_Layer: 10
   m_Name: PBullet1
   m_TagString: PBullet
@@ -424,7 +502,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -4523387898352911393, guid: 608832424a297e946b4bd923113e4a9c,
+    type: 3}
   m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -442,7 +521,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6328598054390704031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -499,3 +578,38 @@ MonoBehaviour:
   deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
     type: 3}
   particleLifeTime: 1
+--- !u!95 &5637391177122726494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598054390704031}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af6380981ff2b1043a06e843a8193dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &3290274451883649011
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328598054390704031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008419618, y: 0.16387242}
+  m_Size: {x: 0.07981399, y: 0.32336354}
+  m_Direction: 0

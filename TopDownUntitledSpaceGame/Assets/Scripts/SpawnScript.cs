@@ -19,6 +19,7 @@ public class SpawnScript : MonoBehaviour
     public int maxWaves = 6;
     public float waveDelay = 5;
     public int maxEnemies = 5;
+    public string wave2;
     float spawnDistanceX;
     float spawnDistanceY;
     float spawnDistanceX2;

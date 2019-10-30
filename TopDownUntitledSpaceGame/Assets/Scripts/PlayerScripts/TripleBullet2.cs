@@ -20,11 +20,13 @@ public class TripleBullet2 : MonoBehaviour
 
     void Update()
     {
+        /*
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         bulletspeed = Player.GetComponentInChildren<PlayShoot>().bulletSpeed;
         //bulletspeed = Player.GetComponent<PlayShoot>().bulletSpeed;
         rb = Player.GetComponent<Rigidbody2D>().velocity;
         //GetComponent<Rigidbody2D>().AddForce(transform.up * bulletspeed + rb);
         GetComponent<Rigidbody2D>().velocity = (transform.up * bulletspeed) + rb;
+        */
     }
 }

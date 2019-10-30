@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int enemyHealth = 6;
-    public GameObject heart;
     public bool objectInstantiated;
+    public GameObject pointMultiplier;
+    GameObject droppedPointMultiplier;
+    public GameObject points;
     public GameObject deathParticle;
 
     // Start is called before the first frame update
@@ -35,8 +37,9 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(gameObject);
                 //Instantiate the object;
-                GameObject dropheart = Instantiate(heart, transform.position, Quaternion.identity);
-                dropheart.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+                GameObject droppedPointMultiplier = Instantiate(points, transform.position, Quaternion.identity);
+                Instantiate(pointMultiplier, transform.position, Quaternion.identity);
+                droppedPointMultiplier.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
             }
 

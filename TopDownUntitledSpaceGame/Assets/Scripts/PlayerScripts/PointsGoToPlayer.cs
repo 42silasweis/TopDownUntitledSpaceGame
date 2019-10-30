@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointsGoToPlayer : MonoBehaviour
 {
-    public float timer = 0;
+    float timer = 0;
     public float destroyPoints = 3.0f;
 
     private Transform player;
