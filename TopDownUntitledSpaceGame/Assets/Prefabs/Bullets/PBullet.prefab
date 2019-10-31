@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8617439947245292670}
   m_Layer: 10
   m_Name: PBullet
-  m_TagString: PBullet
+  m_TagString: PBulletParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

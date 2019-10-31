@@ -20,6 +20,7 @@ TagManager:
   - Plus5Points
   - PointMultiplier
   - Spawner
+  - PBulletParent
   layers:
   - Default
   - TransparentFX

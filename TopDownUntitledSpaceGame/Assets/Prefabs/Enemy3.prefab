@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2447529397532881269}
   - component: {fileID: 2447529397532881265}
   - component: {fileID: 2832490092363152778}
-  - component: {fileID: 2447529397532881270}
-  - component: {fileID: 2447529397532881264}
+  - component: {fileID: 907943747322302027}
+  - component: {fileID: 907943747322302028}
+  - component: {fileID: 907943747322302029}
   m_Layer: 2
   m_Name: Enemy3
   m_TagString: Enemy
@@ -168,7 +169,7 @@ PolygonCollider2D:
       - {x: 0.22261755, y: -0.14864239}
       - {x: 0.26923653, y: -0.09006159}
       - {x: 0.26893955, y: 0.0051757265}
---- !u!114 &2447529397532881270
+--- !u!114 &907943747322302027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,13 +178,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2447529397532881271}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c23cbd118b03014f9807ed7786915ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 3257e0dd99d403a4685f2ea256d897ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  target: {fileID: 0}
+  instant: 0
+  speed: 3
+  dist: 2
+--- !u!114 &907943747322302028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447529397532881271}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d49b4d5fb489934b9c9af39d75797da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   chaseSpeed: 0.5
-  rotationSpeed: 2
---- !u!114 &2447529397532881264
+  chaseTriggerDistance: 50
+  rotationSpeed: 4
+--- !u!114 &907943747322302029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,15 +209,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2447529397532881271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07cbd5b5ab926249bcc21d351f3736d, type: 3}
+  m_Script: {fileID: 11500000, guid: f320bb69e466c31468ef2117ee779301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHeight: 1
-  liftForce: 1
-  damping: 0
-  player: {fileID: 0}
-  chaseSpeed: 0.7
-  rotationSpeed: 4
+  chaseSpeed: 0.6
+  chaseTriggerDistance: 50
+  rotationSpeed: 3
+  instant: 0
+  speed: 3
+  dist: 3
 --- !u!1 &5383738364043833427
 GameObject:
   m_ObjectHideFlags: 0

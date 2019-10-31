@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 7565517913493690724}
   m_Layer: 10
   m_Name: PBulletDouble
-  m_TagString: PBullet
+  m_TagString: PBulletParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

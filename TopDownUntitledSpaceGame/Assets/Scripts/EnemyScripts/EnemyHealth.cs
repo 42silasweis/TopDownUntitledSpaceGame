@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PBullet")
+        if (collision.gameObject.tag == "PBullet" || collision.gameObject.tag == "PBulletParent")
         {
             enemyHealth--;
             Instantiate(deathParticle, transform.position, transform.rotation);

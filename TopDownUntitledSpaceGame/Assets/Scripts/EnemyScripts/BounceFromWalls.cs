@@ -21,6 +21,7 @@ public class BounceFromWalls : MonoBehaviour
 
     void Start()
     {
+
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         Chase();
         rb2D = GetComponent<Rigidbody2D>();
@@ -56,6 +57,7 @@ public class BounceFromWalls : MonoBehaviour
         chaseDirection.Normalize();
         GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
     }
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 hitpoint = collision.GetContact(0).point;
@@ -74,4 +76,5 @@ public class BounceFromWalls : MonoBehaviour
         rb2D.velocity = vel * chaseSpeed;
 
     }
+    */
 }
