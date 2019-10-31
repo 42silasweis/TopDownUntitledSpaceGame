@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1517073508683638720}
   - component: {fileID: 2388229734524944497}
-  - component: {fileID: 2394684654425939273}
   - component: {fileID: 7309204734337235174}
   - component: {fileID: 2456027409345159909}
   - component: {fileID: 6452285457819207704}
+  - component: {fileID: 5984832434178351992}
+  - component: {fileID: 6842548350686719693}
   m_Layer: 10
   m_Name: PBullet2
   m_TagString: PBullet
@@ -73,8 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
+  m_Sprite: {fileID: -4523387898352911393, guid: 608832424a297e946b4bd923113e4a9c,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2394684654425939273
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2561849750426767192}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.07224536
 --- !u!50 &7309204734337235174
 Rigidbody2D:
   serializedVersion: 4
@@ -145,6 +131,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 0}
+  particleLifeTime: 1
+--- !u!70 &5984832434178351992
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561849750426767192}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007977874, y: 0.16400468}
+  m_Size: {x: 0.07822067, y: 0.32526374}
+  m_Direction: 0
+--- !u!95 &6842548350686719693
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561849750426767192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af6380981ff2b1043a06e843a8193dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7861529081997326992
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,10 +178,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7861529081997326994}
   - component: {fileID: 7861529081997326995}
-  - component: {fileID: 7861529081997326996}
   - component: {fileID: 3754942282052762497}
   - component: {fileID: 7463823454466588957}
   - component: {fileID: 4674338284038862213}
+  - component: {fileID: 6851443829631768591}
+  - component: {fileID: 4717924987657383620}
   m_Layer: 10
   m_Name: PBullet1
   m_TagString: PBullet
@@ -218,8 +242,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6427109, g: 0.8725641, b: 0.9528302, a: 1}
+  m_Sprite: {fileID: -4523387898352911393, guid: 608832424a297e946b4bd923113e4a9c,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -229,22 +254,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7861529081997326996
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861529081997326992}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0014159679, y: -0.000000024658483}
-  serializedVersion: 2
-  m_Radius: 0.07196212
 --- !u!114 &3754942282052762497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +299,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 0}
+  particleLifeTime: 1
+--- !u!70 &6851443829631768591
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861529081997326992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007977874, y: 0.16400468}
+  m_Size: {x: 0.07822067, y: 0.32526374}
+  m_Direction: 0
+--- !u!95 &4717924987657383620
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861529081997326992}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af6380981ff2b1043a06e843a8193dc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8867711889150394415
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,3 +403,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticle: {fileID: 0}
+  particleLifeTime: 1

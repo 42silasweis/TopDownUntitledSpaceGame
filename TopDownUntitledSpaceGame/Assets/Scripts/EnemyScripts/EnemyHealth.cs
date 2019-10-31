@@ -35,12 +35,12 @@ public class EnemyHealth : MonoBehaviour
 
             if (objectInstantiated == false && enemyHealth <= 0)
             {
-                Destroy(gameObject);
                 //Instantiate the object;
-                GameObject droppedPointMultiplier = Instantiate(points, transform.position, Quaternion.identity);
-                Instantiate(pointMultiplier, transform.position, Quaternion.identity);
+                GameObject droppedPointMultiplier = Instantiate(pointMultiplier, transform.position, transform.rotation);
+                Instantiate(points, transform.position, Quaternion.identity);
                 droppedPointMultiplier.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
+                Destroy(gameObject);
             }
         }
         if (collision.gameObject.tag == "MassKillEnemies")

@@ -21615,7 +21615,7 @@ PrefabInstance:
     - target: {fileID: 503109829320795497, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
         type: 3}
       propertyPath: orthographic size
-      value: 3.55
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9, type: 3}
@@ -32104,6 +32104,11 @@ PrefabInstance:
     - target: {fileID: 698083963733624792, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: playerTooClose
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

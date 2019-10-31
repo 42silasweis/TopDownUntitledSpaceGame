@@ -20,36 +20,50 @@ public class SpawnScript : MonoBehaviour
     int inititalMaxEnemies;
     public string wave2;
 
+    Transform player;
+    Vector3 playerPosition;
+    public float playerTooClose = 0.8f;
+
     float spawnDistanceX;
     float spawnDistanceY;
     float spawnDistanceX2;
     float spawnDistanceY2;
     void Start()
     {
-        inititalMaxEnemies = maxEnemies;
-        //Turns the the spawners transform position and makes a value that is 
-        //minuss the spawnRange into a float that can be used in the new Vector2 later
+        /*Turns the the spawners transform position and makes a value that is 
+        minus the spawnRange into a float that can be used in the new Vector2 later */
         spawnDistanceX = transform.position.x;
         spawnDistanceY = transform.position.y;
         spawnDistanceX2 = transform.position.x - spawnRange;
         spawnDistanceY2 = transform.position.y - spawnRange;
 
-        //spawnPosition = new Vector2(Random.Range(-spawnDistanceX, spawnDistanceX), Random.Range(-spawnDistanceY, spawnDistanceY));
-        //spawnPosition.Normalize();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
+        inititalMaxEnemies = maxEnemies;
     }
     void Update()
     {
         time += Time.deltaTime;
         time2 += Time.deltaTime;
 
+        //Checks the distance between the player and the current random spawnpoint
+        Vector3 playerPosition = (player.position - spawnPosition);
+        //Vector2 playerDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
+
         if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves)
-        {
-            time2 = 0;
-            spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
-            //spawnPosition.Normalize();
-            Instantiate(enemy, spawnPosition, Quaternion.identity);
-            enemyCount++;
-            Debug.Log(spawnPosition);
+        {           
+            //If the player to too close to the last randomly set spawnpoint it will keep getting a new random position until it can spawn
+            if (playerPosition.magnitude > playerTooClose)
+            {
+                time2 = 0;
+                Instantiate(enemy, spawnPosition, Quaternion.identity);
+                enemyCount++;
+                RandoomPosition();
+            }
+                else
+                {
+                RandoomPosition();
+                }
         }
         if(enemyCount == maxEnemies)
         {
@@ -58,8 +72,12 @@ public class SpawnScript : MonoBehaviour
             enemyCount = 0;
             maxEnemies += 1;
         }
-        //Debug.Log(time);
-        //Debug.Log(time2);
+    }
+
+  
+    void RandoomPosition() //Randomly selects a range itn which to spawn the next Enemy
+    {
+        spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
