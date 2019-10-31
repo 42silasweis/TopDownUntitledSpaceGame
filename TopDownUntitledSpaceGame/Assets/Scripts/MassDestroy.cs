@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MassKill : MonoBehaviour
+public class MassDestroy : MonoBehaviour
 {
     public bool killAll = true;
 

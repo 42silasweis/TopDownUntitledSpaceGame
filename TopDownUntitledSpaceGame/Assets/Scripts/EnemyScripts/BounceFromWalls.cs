@@ -48,6 +48,7 @@ public class BounceFromWalls : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
+
     }
     void Chase() // Chase function
     {
@@ -55,7 +56,7 @@ public class BounceFromWalls : MonoBehaviour
         chaseDirection.Normalize();
         GetComponent<Rigidbody2D>().velocity = chaseDirection * chaseSpeed;
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 hitpoint = collision.GetContact(0).point;
         Vector2 hitPointDir = new Vector2(hitpoint.x - transform.position.x, hitpoint.y - transform.position.y);
@@ -72,5 +73,5 @@ public class BounceFromWalls : MonoBehaviour
         }
         rb2D.velocity = vel * chaseSpeed;
 
-    }*/
+    }
 }
