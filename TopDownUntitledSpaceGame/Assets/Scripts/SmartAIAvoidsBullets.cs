@@ -10,13 +10,14 @@ public class SmartAIAvoidsBullets : MonoBehaviour
     public float rotationSpeed = 3.0f;
     float afterSpawnDelay = 0.8f;
     float startTimer;
-    float bulletDist;
+    float bulletDistf;
     bool canChase;
 
+    Vector3 bulletDist;
     GameObject target;
     public float speed = 3.0f;
     public float tooCloseToBullet = 1.0f;
-    public float dist = 100;
+    public float dist = 10000;
     float timer;
 
     void Start()
@@ -29,12 +30,17 @@ public class SmartAIAvoidsBullets : MonoBehaviour
 
     void Update()
     {
+        
         //Start chasing after  the set spawn delay and then chase the player
         startTimer += Time.deltaTime;
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > afterSpawnDelay && canChase == true)
         {
             Chase();
+        }
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         //AvoidingBullets start here
@@ -48,15 +54,16 @@ public class SmartAIAvoidsBullets : MonoBehaviour
         {
             canChase = false;
             transform.up = Vector3.Lerp(transform.up, target.transform.position - transform.position, 0.2f * timer);//0.053f);
+            //float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = -transform.up * speed;
         }
-        if (dist > tooCloseToBullet)
+        if (chaseDirection.magnitude > 0.5)
         {
             target = null;
             canChase = true;
         }
 
-
+        
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity; //Rotates the sprite to face the direction the enemy is moving
         if (moveDirection != Vector3.zero)
         {
@@ -66,13 +73,14 @@ public class SmartAIAvoidsBullets : MonoBehaviour
     }
     void FindTarget() //Makes the bullets a target it can track
     {       
-        //dist = 10000;
+        dist = 10000;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("PBulletParent"); 
         for (int i = 0; i < enemies.Length; i++)
         {
             if (Vector3.Distance(transform.position, enemies[i].transform.position) < dist)
             {
                 target = enemies[i];
+                //bulletDist = (transform.position - enemies[i].transform.position);
                 dist = Vector3.Distance(transform.position, enemies[i].transform.position);
             }
         }

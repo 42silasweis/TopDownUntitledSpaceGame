@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 0.6
-  chaseTriggerDistance: 100
+  chaseTriggerDistance: 1000
   rotationSpeed: 2
   speed: 3
   tooCloseToBullet: 1.5
-  dist: 1000
+  dist: 10000
 --- !u!114 &1650620728
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -255,9 +255,9 @@ GameObject:
   - component: {fileID: 201941525}
   - component: {fileID: 201941524}
   - component: {fileID: 201941526}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: GridForeground
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11299,85 +11299,9 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0.05
-  m_ColliderPaths:
-  - m_Collider: {fileID: 906134273}
-    m_ColliderPaths:
-    - - X: 240000000
-        Y: -153907821
-      - X: 240000000
-        Y: 193907821
-      - X: 233907821
-        Y: 200000000
-      - X: -223907821
-        Y: 200000000
-      - X: -230000000
-        Y: 193907821
-      - X: -230000000
-        Y: -153907821
-      - X: -223907821
-        Y: -160000000
-      - X: 233907821
-        Y: -160000000
-    - - X: -141668687
-        Y: -80000000
-      - X: -145491122
-        Y: -78416696
-      - X: -148416696
-        Y: -75491122
-      - X: -150000000
-        Y: -71668687
-      - X: -150000000
-        Y: 101668684
-      - X: -148416696
-        Y: 105491119
-      - X: -145491118
-        Y: 108416697
-      - X: -141668683
-        Y: 110000001
-      - X: 141668682
-        Y: 110000000
-      - X: 145491125
-        Y: 108416693
-      - X: 148416695
-        Y: 105491123
-      - X: 150000000
-        Y: 101668687
-      - X: 150000000
-        Y: -71668687
-      - X: 148416696
-        Y: -75491122
-      - X: 145491122
-        Y: -78416696
-      - X: 141668687
-        Y: -80000000
+  m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: 24, y: -15.390782}
-      - {x: 24, y: 19.390783}
-      - {x: 23.390783, y: 20}
-      - {x: -22.390783, y: 20}
-      - {x: -23, y: 19.390783}
-      - {x: -23, y: -15.390782}
-      - {x: -22.390783, y: -16}
-      - {x: 23.390783, y: -16}
-    - - {x: -14.166869, y: -8}
-      - {x: -14.549112, y: -7.8416696}
-      - {x: -14.841671, y: -7.5491123}
-      - {x: -15, y: -7.1668687}
-      - {x: -15, y: 10.166868}
-      - {x: -14.841671, y: 10.549112}
-      - {x: -14.549112, y: 10.84167}
-      - {x: -14.166869, y: 11}
-      - {x: 14.081091, y: 11}
-      - {x: 14.316793, y: 10.944358}
-      - {x: 14.500087, y: 10.852712}
-      - {x: 14.63611, y: 10.754672}
-      - {x: 14.841669, y: 10.549112}
-      - {x: 15, y: 10.166869}
-      - {x: 15, y: -7.1668687}
-      - {x: 14.841671, y: -7.5491123}
-      - {x: 14.549112, y: -7.8416696}
-      - {x: 14.166869, y: -8}
+    m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 1.04
 --- !u!19719996 &906134273
@@ -11387,7 +11311,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906134270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -22236,11 +22160,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 907943747322302029, guid: 10d7b69a0846ad44eb3889f4d03d7cd7,
-        type: 3}
-      propertyPath: dist
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d7b69a0846ad44eb3889f4d03d7cd7, type: 3}
