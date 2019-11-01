@@ -38,8 +38,8 @@ TagManager:
   - Particle
   - BackgroundImage
   - Spawner
-  - 
-  - 
+  - Wall
+  - PointMultiplier
   - 
   - 
   - 

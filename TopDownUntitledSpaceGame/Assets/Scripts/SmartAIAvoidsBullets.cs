@@ -10,37 +10,31 @@ public class SmartAIAvoidsBullets : MonoBehaviour
     public float rotationSpeed = 3.0f;
     float afterSpawnDelay = 0.8f;
     float startTimer;
-    Vector3 startPosition;
-    bool spawnedIn = false;
+    float bulletDist;
+    bool canChase;
 
     GameObject target;
-    public bool instant = false;
     public float speed = 3.0f;
-    public float dist = 3;
+    public float tooCloseToBullet = 1.0f;
+    public float dist = 100;
     float timer;
-    // Start is called before the first frame update
+
     void Start()
     {
+        canChase = true;
         FindTarget();
-        GetComponent<PolygonCollider2D>().enabled = false;
         startTimer = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Start chasing after  the set spawn delay and then chase the player
         startTimer += Time.deltaTime;
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-        if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > afterSpawnDelay)
+        if (chaseDirection.magnitude < chaseTriggerDistance && startTimer > afterSpawnDelay && canChase == true)
         {
             Chase();
-        }
-
-        if (startTimer > afterSpawnDelay && spawnedIn == false)
-        {
-            GetComponent<PolygonCollider2D>().enabled = true;
-            spawnedIn = true;
         }
 
         //AvoidingBullets start here
@@ -49,25 +43,31 @@ public class SmartAIAvoidsBullets : MonoBehaviour
         {
             FindTarget();
         }
-        if (dist < 3)
+
+        if (dist < tooCloseToBullet)
         {
+            canChase = false;
             transform.up = Vector3.Lerp(transform.up, target.transform.position - transform.position, 0.2f * timer);//0.053f);
-            //float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = -transform.up * speed;
+        }
+        if (dist > tooCloseToBullet)
+        {
+            target = null;
+            canChase = true;
         }
 
 
-        Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;
+        Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity; //Rotates the sprite to face the direction the enemy is moving
         if (moveDirection != Vector3.zero)
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
     }
-    void FindTarget()
-    {
+    void FindTarget() //Makes the bullets a target it can track
+    {       
         //dist = 10000;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("PBulletParent");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("PBulletParent"); 
         for (int i = 0; i < enemies.Length; i++)
         {
             if (Vector3.Distance(transform.position, enemies[i].transform.position) < dist)
@@ -76,12 +76,9 @@ public class SmartAIAvoidsBullets : MonoBehaviour
                 dist = Vector3.Distance(transform.position, enemies[i].transform.position);
             }
         }
-        if (dist > 3)
-        {
-            target = null;
-        }
     }
-    void Chase() // Chase function
+
+    void Chase() // Chase the player
     {
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         chaseDirection.Normalize();
