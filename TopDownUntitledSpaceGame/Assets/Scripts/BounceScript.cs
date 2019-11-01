@@ -6,7 +6,7 @@ public class BounceScript : MonoBehaviour
 {
     Vector2 moveDir;
     Rigidbody2D rb;
-    public float moveSpeed = 1.0f;
+    public float moveSpeed = 0.6f;
     public float rotationSpeed = 3.0f;
     List<Vector2> oldSpeeds;
     Vector2 switchVel;
@@ -18,14 +18,14 @@ public class BounceScript : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         switchVel = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-
+        GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
         //switchVel = new Vector2(3, 5) * moveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed * 1;
+        //GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
 
         //Makes enemy face direction it is moving
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;
@@ -49,7 +49,7 @@ public class BounceScript : MonoBehaviour
         {
             dir.y *= -1;
         }
-        switchVel = dir * moveSpeed;
-        GetComponent<Rigidbody2D>().velocity = switchVel;
+        switchVel = dir;
+        GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
     }
 }
