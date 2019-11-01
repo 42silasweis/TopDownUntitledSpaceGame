@@ -46,6 +46,11 @@ public class SpawnScript : MonoBehaviour
         time += Time.deltaTime;
         time2 += Time.deltaTime;
 
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         //Checks the distance between the player and the current random spawnpoint
         Vector3 playerPosition = (player.position - spawnPosition);
         //Vector2 playerDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);

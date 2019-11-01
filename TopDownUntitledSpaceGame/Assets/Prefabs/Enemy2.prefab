@@ -127,8 +127,9 @@ GameObject:
   - component: {fileID: 7728667893335742186}
   - component: {fileID: 7924619279610534417}
   - component: {fileID: 8899946517538665889}
+  - component: {fileID: 5966644276719708630}
   m_Layer: 8
-  m_Name: Enemylvl1
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,3 +295,15 @@ MonoBehaviour:
   chaseSpeed: 0.8
   chaseTriggerDistance: 50
   rotationSpeed: 4
+--- !u!114 &5966644276719708630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728667893335742188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67459e929b7a86d4a9d8e026ca76887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

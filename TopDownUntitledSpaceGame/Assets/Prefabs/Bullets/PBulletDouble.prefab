@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6452285457819207704}
   - component: {fileID: 5984832434178351992}
   - component: {fileID: 6842548350686719693}
+  - component: {fileID: 3967124351479314861}
   m_Layer: 10
   m_Name: PBullet2
   m_TagString: PBullet
@@ -168,6 +169,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3967124351479314861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561849750426767192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticle: {fileID: 6497989164125515980, guid: 57a7d2f5749d7e64cbf08f2ed5328a4a,
+    type: 3}
+  particleLifeTime: 1
 --- !u!1 &7861529081997326992
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +199,7 @@ GameObject:
   - component: {fileID: 4674338284038862213}
   - component: {fileID: 6851443829631768591}
   - component: {fileID: 4717924987657383620}
+  - component: {fileID: 5604487096184284856}
   m_Layer: 10
   m_Name: PBullet1
   m_TagString: PBullet
@@ -336,6 +353,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5604487096184284856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861529081997326992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e0cd1e0a31f464b94fffd081ff7db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticle: {fileID: 2971060601844104883, guid: 8706a90253c404c4c99bdaf1fd4f6e7d,
+    type: 3}
+  particleLifeTime: 1
 --- !u!1 &8867711889150394415
 GameObject:
   m_ObjectHideFlags: 0

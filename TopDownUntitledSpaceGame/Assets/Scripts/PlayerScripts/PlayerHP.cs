@@ -10,10 +10,10 @@ public class PlayerHP : MonoBehaviour
     public float respawnAfter = 2.0f;
     public float clearEnemiesFor = 3.0f;
     float clearEnemies;
-    public int Health = 10;
+    public float Health = 1.0f;
     public int Lives = 10;
     int initialLives;
-    int initialHealth;
+    float initialHealth;
     public float deathTimer;
     public Text healthText;
     public Text liveText;
@@ -54,8 +54,8 @@ public class PlayerHP : MonoBehaviour
             Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
             Health = initialHealth;
             healthText.text = "HEALTH: " + Health + "/" + initialHealth;
-            PlayerSprite.GetComponent<SpriteRenderer>().enabled = true;
-            GetComponent<PolygonCollider2D>().enabled = true;
+            PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            //GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<PlayerMovement>().enabled = true;
             GetComponentInChildren<PlayShoot>().enabled = true;
             //MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
@@ -69,11 +69,10 @@ public class PlayerHP : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "EnemyShoot" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "EnBullet")
         {
-            gethurt();
-
-            if (Health < 1)
+            gethurthalf();
+            if (Health <= 0)
             {
                 deathTimer = 0;
                 respawnplayer();
@@ -86,50 +85,73 @@ public class PlayerHP : MonoBehaviour
                 }
             }
         }
+            if (collision.gameObject.tag == "Enemy")
+            {
+                gethurt();
+
+                if (Health <= 0)
+                {
+                    deathTimer = 0;
+                    respawnplayer();
+                    loselife();
+
+                    if (Lives < 0)
+                    {
+                        //SceneManager.LoadScene("GameOver");
+                        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
+                }
+            }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+        void OnTriggerEnter2D(Collider2D collision)
         {
-        if (collision.gameObject.tag == "Coin")
-        {
-            getheart();
-            Destroy(collision.gameObject);
-            if(Health >= initialHealth)
+            if (collision.gameObject.tag == "Coin")
             {
-                Health = initialHealth;
-                healthText.text = "HP: " + Health + "/" + initialHealth;
+                getheart();
+                Destroy(collision.gameObject);
+                if (Health >= initialHealth)
+                {
+                    Health = initialHealth;
+                    healthText.text = "HP: " + Health + "/" + initialHealth;
+                }
             }
         }
+        void loselife()
+        {
+            Lives--;
+            liveText.text = "LIVES: " + Lives;
+            //Health = initialHealth;
         }
-    void loselife()
+    void gethurthalf()
     {
-        Lives--;
-        liveText.text = "LIVES: " + Lives;
-        //Health = initialHealth;
-    }
-    void gethurt()
-    {
-        Health--;
+        Health -= 0.5f;
         healthText.text = "HP: " + Health + "/" + initialHealth;
         Instantiate(deathParticle, player.transform.position, player.transform.rotation);
     }
-    void respawnplayer()
-    {
-        clearEnemies = 0;
-        massDestroy = true;
-        hasRespawned = false;
-        PlayerSprite.GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<PolygonCollider2D>().enabled = false;
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponentInChildren<PlayShoot>().enabled = false;
-        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
+    void gethurt()
+        {
+            Health--;
+            healthText.text = "HP: " + Health + "/" + initialHealth;
+            Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        }
+        void respawnplayer()
+        {
+            clearEnemies = 0;
+            massDestroy = true;
+            hasRespawned = false;
+            PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            //GetComponent<PolygonCollider2D>().enabled = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponentInChildren<PlayShoot>().enabled = false;
+            MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+        }
+        void getheart()
+        {
+            Health++;
+            healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+        }
     }
-    void getheart()
-    {
-        Health++;
-        healthText.text = "HEALTH: " + Health + "/" + initialHealth;
-    }
-}
