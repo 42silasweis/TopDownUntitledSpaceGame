@@ -23,44 +23,87 @@ public class CoinCollect1 : MonoBehaviour
         //This gives the player a set multiplier
         if(collision.gameObject.tag == "PointMultiplier")
         {
-            pointMultiplier++;
-            Destroy(collision.gameObject);
-            multiplierText.text = "MULTIPLIER: " + pointMultiplier;
             if (pointMultiplier >= maxMultiplier)
             {
                 pointMultiplier = maxMultiplier;
+            }
+            else
+            {
+                pointMultiplier++;
+                Destroy(collision.gameObject);
+                multiplierText.text = "MULTIPLIER: " + pointMultiplier;
             }
         }
 
         if (collision.gameObject.tag == "Plus5Points")
         {
-            Points += 5 * pointMultiplier;
-            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
-            Destroy(collision.gameObject);
+            if (Points == 0)
+            {
+                Points += 5;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+            }
+            else
+            {
+                Points += 5 * pointMultiplier;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "Plus10Points")
         {
-            Points += 10 * pointMultiplier;
-            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
-            Destroy(collision.gameObject);
+            if (Points == 0)
+            {
+                Points += 10;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+            }
+            else
+            {
+                Points += 10 * pointMultiplier;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "Plus20Points")
         {
-            Points += 20 * pointMultiplier;
-            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
-            Destroy(collision.gameObject);
+            if (Points == 0)
+            {
+                Points += 20;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+            }
+            else
+            {
+                Points += 20 * pointMultiplier;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "Plus40Points")
         {
-            Points += 40 * pointMultiplier;
-            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
-            Destroy(collision.gameObject);
-        }
+            if (Points == 0)
+            {
+                Points += 40;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+            }
+            else
+            {
+                Points += 40 * pointMultiplier;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                Destroy(collision.gameObject);
+            }
+         }
         if (collision.gameObject.tag == "Plus80Points")
         {
+            if (Points == 0)
+            {
+                Points += 80;
+                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+            }
+            else
+            {
             Points += 80 * pointMultiplier;
             pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
             Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "MassKillEnemies")
         {

@@ -21,6 +21,7 @@ TagManager:
   - PointMultiplier
   - Spawner
   - PBulletParent
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Spawner
   - Wall
   - PointMultiplier
-  - 
+  - Portal
   - 
   - 
   - 
