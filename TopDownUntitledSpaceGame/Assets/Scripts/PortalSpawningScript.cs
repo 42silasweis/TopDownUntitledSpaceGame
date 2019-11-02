@@ -42,7 +42,9 @@ public class PortalSpawningScript : MonoBehaviour
             portalOn = true;
             timer = 0;
             GetComponent<PolygonCollider2D>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<Animator>().enabled = true;
+            spriteRenderer.sprite = portalSprite[0];
         }
             if(PointCount > neededPoints && timer > portalDelay && portalOn2 == false)
             {
