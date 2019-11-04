@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float rotationSpeed = 2.0f;
     Vector3 playerMove;
-    public float delay = 1.0f;
+    public float delay = 0.2f;
     float timer = 0;
     public GameObject Particle;
 

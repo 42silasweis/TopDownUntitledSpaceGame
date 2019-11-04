@@ -11,13 +11,28 @@ public class BounceScript : MonoBehaviour
     List<Vector2> oldSpeeds;
     Vector2 switchVel;
     Transform player;
+
+    public float spawnRangeX = 1.5f;
+    public float spawnRangeY = 1.5f;
+    float spawnDistanceX;
+    float spawnDistanceY;
+    float spawnDistanceX2;
+    float spawnDistanceY2;
+    Vector3 RandomPosition1;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnDistanceX = player.transform.position.x;
+        spawnDistanceY = player.transform.position.y;
+        spawnDistanceX2 = player.transform.position.x - spawnRangeX;
+        spawnDistanceY2 = player.transform.position.y - spawnRangeY;
 
+        RandomPosition1 = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
+        //transform.up = RandomPosition1;
         rb = GetComponent<Rigidbody2D>();
-        switchVel = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
+        switchVel = new Vector2(RandomPosition1.x - transform.position.x, RandomPosition1.y - transform.position.y);
+        switchVel.Normalize();
         GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
         //switchVel = new Vector2(3, 5) * moveSpeed;
     }

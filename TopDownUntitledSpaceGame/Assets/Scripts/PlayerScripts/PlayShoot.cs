@@ -4,24 +4,53 @@ using UnityEngine;
 
 public class PlayShoot : MonoBehaviour
 {
-    public GameObject prefab;
+    GameObject player;
+    public GameObject prefab1;
+    public GameObject prefab2;
+    public GameObject prefab3;
+    GameObject theBullet;
     public float bulletSpeed = 10.0f;
     public float bulletlifetime = 1.0f;
-    public float shootDelay = 1.0f;
+    public float shootDelay;
+    public float shootDelay1 = 1.0f;
+    public float shootDelay2 = 1.0f;
     float timer = 0;
+    public int bullet1NeededPoints;
+    public int bullet2NeededPoints;
+    //public int bullet3NeededPoints;
+    int currentPoints;
+
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        theBullet = prefab1;
     }
-
 
     void Update()
     {
         timer += Time.deltaTime;
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        currentPoints = player.GetComponentInChildren<CoinCollect1>().Points;
+
+        if (currentPoints > bullet1NeededPoints && currentPoints < bullet2NeededPoints)
+        {
+            theBullet = prefab2;
+            shootDelay = shootDelay1;
+        }
+        if(currentPoints > bullet2NeededPoints)
+        {
+            theBullet = prefab3;
+            shootDelay = shootDelay2;
+        }
+
+        timer += Time.deltaTime;
         if (Input.GetButton("Fire1") && timer > shootDelay)
         {
             timer = 0;
-            GameObject bullet = Instantiate(prefab, transform.position, transform.rotation);
+            GameObject bullet = Instantiate(theBullet, transform.position, transform.rotation);
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             //Debug.Log(mousePosition);
@@ -32,8 +61,6 @@ public class PlayShoot : MonoBehaviour
             bullet.transform.up = shootDir;
             //Debug.Log(shootDir);
             Destroy(bullet, bulletlifetime);
-
-
         }
     }
 

@@ -95,12 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1e6f008f93dd84b93f121aa993f81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2447529397532881271, guid: 10d7b69a0846ad44eb3889f4d03d7cd7, type: 3}
+  enemy: {fileID: 7728667893335742188, guid: c5a8d9103ca51474baaabddbc8ee802f, type: 3}
   spawnPosition: {x: 0, y: 0, z: 0}
+  timeTillStart: 30
   spawnDelay: 0.05
-  spawnRange: 3
+  spawnRangeX: 2
+  spawnRangeY: 2
   maxWaves: 6
-  waveDelay: 5
+  waveDelay: 7
   maxEnemies: 5
   wave2: 
   playerTooClose: 1

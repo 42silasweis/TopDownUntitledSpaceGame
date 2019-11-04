@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScriptsEnableAndDisable : MonoBehaviour
 {
-    float afterSpawnDelay = 0.8f;
+    public float afterSpawnDelay = 0.8f;
     float startTimer;
     bool spawnedIn = false;
 
@@ -23,6 +23,7 @@ public class EnemyScriptsEnableAndDisable : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<SmartAIAvoidsBullets>().enabled = true;
+            GetComponent<EnemyHealth>().enabled = true;
             spawnedIn = true;
         }
     }

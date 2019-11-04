@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6327729523421912582}
   m_Layer: 10
   m_Name: PBullet
-  m_TagString: PBulletParent
+  m_TagString: PBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.007977874, y: 0.16400468}

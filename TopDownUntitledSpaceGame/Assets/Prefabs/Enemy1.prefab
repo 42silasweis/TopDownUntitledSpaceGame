@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7590635023758845785}
   - component: {fileID: 7590635023446851574}
   - component: {fileID: 7590635023446851573}
-  m_Layer: 8
+  m_Layer: 19
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 7167102699577752364}
   - component: {fileID: -6218971999749206627}
   - component: {fileID: 188415231221502531}
-  m_Layer: 2
+  m_Layer: 19
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7336065073871894481}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
   m_Name: 
@@ -305,13 +305,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7336065073871894481}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c0d1a73014d5e046bc18616471734da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
-  rotationSpeed: 4
+  moveSpeed: 0.3
+  rotationSpeed: 6
+  spawnRangeX: 3.5
+  spawnRangeY: 3.5
 --- !u!114 &188415231221502531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +326,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd9aaabfa6b0584ab50c446d2853e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  afterSpawnDelay: 0.6

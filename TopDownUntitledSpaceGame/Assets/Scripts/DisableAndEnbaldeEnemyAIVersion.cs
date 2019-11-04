@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisableAndEnbaldeEnemyAIVersion : MonoBehaviour
 {
-    float afterSpawnDelay = 0.8f;
+    public float afterSpawnDelay = 0.8f;
     float startTimer;
     bool spawnedIn = false;
 
@@ -23,6 +23,7 @@ public class DisableAndEnbaldeEnemyAIVersion : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<Enemy1AI>().enabled = true;
+            GetComponent<EnemyHealth>().enabled = true;
             spawnedIn = true;
         }
     }

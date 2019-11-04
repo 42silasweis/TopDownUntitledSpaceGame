@@ -26,6 +26,7 @@ public class CoinCollect1 : MonoBehaviour
             if (pointMultiplier >= maxMultiplier)
             {
                 pointMultiplier = maxMultiplier;
+                Destroy(collision.gameObject);
             }
             else
             {

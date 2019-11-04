@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
 {
-
+    public bool restartAfterPlayerDeath = true;
     public GameObject enemy;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
     float time;
     float time2;
-    public float spawnDelay = 0.6f;
-    public float spawnRange = 1.5f;
+    //float timeFrame1 = 6.0f;
+    public float timeTillStart = 30.0f;
+    public float spawnDelay = 0.2f;
+    public float spawnRangeY = 1.5f;
+    public float spawnRangeX = 1.5f;
     int enemyCount = 0;
     int wave = 0;
     public int maxWaves = 6;
     public float waveDelay = 5;
     public int maxEnemies = 5;
     int inititalMaxEnemies;
-    public string wave2;
+    //public string wave2;
 
     Transform player;
     Vector3 playerPosition;
@@ -34,8 +37,8 @@ public class SpawnScript : MonoBehaviour
         minus the spawnRange into a float that can be used in the new Vector2 later */
         spawnDistanceX = transform.position.x;
         spawnDistanceY = transform.position.y;
-        spawnDistanceX2 = transform.position.x - spawnRange;
-        spawnDistanceY2 = transform.position.y - spawnRange;
+        spawnDistanceX2 = transform.position.x - spawnRangeX;
+        spawnDistanceY2 = transform.position.y - spawnRangeY;
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
@@ -55,12 +58,11 @@ public class SpawnScript : MonoBehaviour
         Vector3 playerPosition = (player.position - spawnPosition);
         //Vector2 playerDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
 
-        if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves)
+        if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves && time2 > timeTillStart)
         {           
             //If the player to too close to the last randomly set spawnpoint it will keep getting a new random position until it can spawn
             if (playerPosition.magnitude > playerTooClose)
             {
-                time2 = 0;
                 Instantiate(enemy, spawnPosition, Quaternion.identity);
                 enemyCount++;
                 RandoomPosition();
@@ -79,6 +81,20 @@ public class SpawnScript : MonoBehaviour
         }
     }
 
+    void wavePart1()
+    {
+                    if (playerPosition.magnitude > playerTooClose)
+            {
+                time2 = 0;
+                Instantiate(enemy, spawnPosition, Quaternion.identity);
+                enemyCount++;
+                RandoomPosition();
+            }
+                else
+                {
+                RandoomPosition();
+                }
+    }
   
     void RandoomPosition() //Randomly selects a range itn which to spawn the next Enemy
     {
@@ -86,7 +102,7 @@ public class SpawnScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "MassKillEnemies")
+        if (collision.gameObject.tag == "MassKillEnemies" && restartAfterPlayerDeath == true)
         {
             maxEnemies = inititalMaxEnemies;
             time = 0;
