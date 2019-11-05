@@ -12,12 +12,19 @@ public class CoinCollect1 : MonoBehaviour
     public Text multiplierText;
     public int pointMultiplier;
     public int maxMultiplier = 100;
+    string Points1;
 
     void Start()
     {
         pointsText.text = "SCORE: " + Points;
         multiplierText.text = "MULTIPLIER: " + pointMultiplier;
     }
+    private void Update()
+    {
+        Points1 = Points.ToString("#,##0");
+    }
+
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerPrefs.SetInt("Lvl1Score", Points);
@@ -42,19 +49,19 @@ public class CoinCollect1 : MonoBehaviour
             if (Points == 0)
             {
                 Points += 5;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
             if(pointMultiplier == 0)
              {
                 Points += 5;
-                pointsText.text = "SCORE: " + Points;
+                pointsText.text = "SCORE: " + Points1;
                 Destroy(collision.gameObject);
             }
             else
             {
                 Points += 5 * pointMultiplier;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
         }
@@ -63,19 +70,19 @@ public class CoinCollect1 : MonoBehaviour
             if (Points == 0)
             {
                 Points += 10;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
             if (pointMultiplier == 0)
             {
                 Points += 10;
-                pointsText.text = "SCORE: " + Points;
+                pointsText.text = "SCORE: " + Points1;
                 Destroy(collision.gameObject);
             }
             else
             {
                 Points += 10 * pointMultiplier;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
         }
@@ -84,19 +91,19 @@ public class CoinCollect1 : MonoBehaviour
             if (Points == 0)
             {
                 Points += 20;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
             if (pointMultiplier == 0)
             {
                 Points += 20;
-                pointsText.text = "SCORE: " + Points;
+                pointsText.text = "SCORE: " + Points1;
                 Destroy(collision.gameObject);
             }
             else
             {
                 Points += 20 * pointMultiplier;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
         }
@@ -105,19 +112,19 @@ public class CoinCollect1 : MonoBehaviour
             if (Points == 0)
             {
                 Points += 40;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
             if (pointMultiplier == 0)
             {
                 Points += 40;
-                pointsText.text = "SCORE: " + Points;
+                pointsText.text = "SCORE: " + Points1;
                 Destroy(collision.gameObject);
             }
             else
             {
                 Points += 40 * pointMultiplier;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
          }
@@ -126,20 +133,20 @@ public class CoinCollect1 : MonoBehaviour
             if (Points == 0)
             {
                 Points += 80;
-                pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
                 Destroy(collision.gameObject);
             }
             if (pointMultiplier == 0)
             {
                 Points += 80;
-                pointsText.text = "SCORE: " + Points;
+                pointsText.text = "SCORE: " + Points1;
                 Destroy(collision.gameObject);
             }
             else
             {
                 Points += 80 * pointMultiplier;
-            pointsText.text = "SCORE: " + Points; // + "/" + neededCoins;
-            Destroy(collision.gameObject);
+                pointsText.text = "SCORE: " + Points1; // + "/" + neededCoins;
+                Destroy(collision.gameObject);
             }
         }
         if (collision.gameObject.tag == "MassKillEnemies")
