@@ -23,6 +23,10 @@ TagManager:
   - PBulletParent
   - Portal
   - PlayerChild
+  - Boss
+  - Slider
+  - SliderBackground
+  - SliderFill
   layers:
   - Default
   - TransparentFX
