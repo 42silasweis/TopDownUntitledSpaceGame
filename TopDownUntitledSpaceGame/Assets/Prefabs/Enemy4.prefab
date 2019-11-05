@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 1
+  enemyHealth: 5
   objectInstantiated: 0
   pointMultiplier: {fileID: 5116448867142331234, guid: d9d7f7f5e4d884d439e63e40239e5639,
     type: 3}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 2.5
   bulletlifetime: 3
   shootDelay: 1.5
   fireRange: 3

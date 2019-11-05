@@ -44,11 +44,11 @@ public class PlayerHP : MonoBehaviour
         liveText.text = "LIVES: " + Lives;
         //levelManager = FindObjectOfType<LevelManager>();
     }
-    private void Update()
+    void Update()
     {
         clearEnemies += Time.deltaTime;
         deathTimer += Time.deltaTime;
-        if (deathTimer > respawnAfter && Health >= 0 && hasRespawned == false)
+        if (deathTimer > respawnAfter && Health <= 0 && hasRespawned == false)
         {
             hasRespawned = true;
             Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
@@ -58,8 +58,8 @@ public class PlayerHP : MonoBehaviour
             //GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<PlayerMovement>().enabled = true;
             GetComponentInChildren<PlayShoot>().enabled = true;
-            //MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
         }
+
         if (clearEnemies > clearEnemiesFor && massDestroy == true)
         {
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = false;
@@ -91,7 +91,6 @@ public class PlayerHP : MonoBehaviour
 
                 if (Health <= 0)
                 {
-                    deathTimer = 0;
                     respawnplayer();
                     loselife();
 
@@ -103,20 +102,6 @@ public class PlayerHP : MonoBehaviour
                 }
             }
     }
-
-        void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.tag == "Coin")
-            {
-                getheart();
-                Destroy(collision.gameObject);
-                if (Health >= initialHealth)
-                {
-                    Health = initialHealth;
-                    healthText.text = "HP: " + Health + "/" + initialHealth;
-                }
-            }
-        }
         void loselife()
         {
             Lives--;
@@ -127,31 +112,26 @@ public class PlayerHP : MonoBehaviour
     {
         Health -= 0.5f;
         healthText.text = "HP: " + Health + "/" + initialHealth;
-        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        //Instantiate(deathParticle, player.transform.position, player.transform.rotation);
     }
     void gethurt()
         {
             Health--;
             healthText.text = "HP: " + Health + "/" + initialHealth;
-            Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+            //Instantiate(deathParticle, player.transform.position, player.transform.rotation);
         }
         void respawnplayer()
         {
+            deathTimer = 0;
             clearEnemies = 0;
             massDestroy = true;
             hasRespawned = false;
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            //GetComponent<PolygonCollider2D>().enabled = false;
-            GetComponent<PlayerMovement>().enabled = false;
+        //GetComponent<PolygonCollider2D>().enabled = false;
+            player.GetComponentInParent<PlayerMovement>().enabled = false;
             GetComponentInChildren<PlayShoot>().enabled = false;
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
-
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             healthText.text = "HEALTH: " + Health + "/" + initialHealth;
-        }
-        void getheart()
-        {
-            Health++;
-            healthText.text = "HEALTH: " + Health + "/" + initialHealth;
-        }
+            Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+    }
     }

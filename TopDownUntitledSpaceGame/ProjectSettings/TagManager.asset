@@ -22,6 +22,7 @@ TagManager:
   - Spawner
   - PBulletParent
   - Portal
+  - PlayerChild
   layers:
   - Default
   - TransparentFX

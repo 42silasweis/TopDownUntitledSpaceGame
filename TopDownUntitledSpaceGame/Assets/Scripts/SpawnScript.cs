@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
 {
+    float resetAfterTimer;
+    public float resetEvery;
+    public bool resetAfterTime = false;
     public bool restartAfterPlayerDeath = true;
+
     public GameObject enemy;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
@@ -46,6 +50,7 @@ public class SpawnScript : MonoBehaviour
     }
     void Update()
     {
+        resetAfterTimer += Time.deltaTime;
         time += Time.deltaTime;
         time2 += Time.deltaTime;
 
@@ -72,6 +77,16 @@ public class SpawnScript : MonoBehaviour
                 RandoomPosition();
                 }
         }
+        if (resetAfterTimer > resetEvery && resetAfterTime == true)
+        {
+            resetAfterTimer = 0;
+            maxEnemies = inititalMaxEnemies;
+            time = 0;
+            time2 = 0;
+            enemyCount = 0;
+            wave = 0;
+        }
+
         if(enemyCount == maxEnemies)
         {
             wave++;
@@ -79,21 +94,6 @@ public class SpawnScript : MonoBehaviour
             enemyCount = 0;
             maxEnemies += 1;
         }
-    }
-
-    void wavePart1()
-    {
-                    if (playerPosition.magnitude > playerTooClose)
-            {
-                time2 = 0;
-                Instantiate(enemy, spawnPosition, Quaternion.identity);
-                enemyCount++;
-                RandoomPosition();
-            }
-                else
-                {
-                RandoomPosition();
-                }
     }
   
     void RandoomPosition() //Randomly selects a range itn which to spawn the next Enemy
@@ -104,6 +104,7 @@ public class SpawnScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "MassKillEnemies" && restartAfterPlayerDeath == true)
         {
+            resetAfterTimer = 0;
             maxEnemies = inititalMaxEnemies;
             time = 0;
             time2 = 0;
