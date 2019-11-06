@@ -4238,6 +4238,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 503109829751594262}
   m_PrefabAsset: {fileID: 0}
+--- !u!68 &1321869926
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321869925}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.7092553, y: -0.96244115}
+  - {x: 1.7102071, y: 0.9648905}
+  - {x: -1.6983721, y: 0.9469418}
+  - {x: -1.7109534, y: -0.95995766}
+  - {x: 1.7086387, y: -0.96212363}
 --- !u!82 &1321869930
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6839,6 +6860,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 503109829320795498, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 503109829320795498, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 503109829320795542, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
         type: 3}
