@@ -99,9 +99,11 @@ MonoBehaviour:
   resetAfterTime: 0
   restartAfterPlayerDeath: 1
   enemy: {fileID: 7728667893335742188, guid: c5a8d9103ca51474baaabddbc8ee802f, type: 3}
+  spawnSound: {fileID: 8754144366156418374, guid: 241079ed49132064cad6a0ee3c85f3c8,
+    type: 3}
   spawnPosition: {x: 0, y: 0, z: 0}
   timeTillStart: 30
-  spawnDelay: 0.05
+  spawnDelay: 0.1
   spawnRangeY: 2
   spawnRangeX: 2
   maxWaves: 6

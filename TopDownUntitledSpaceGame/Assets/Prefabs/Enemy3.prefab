@@ -126,6 +126,8 @@ MonoBehaviour:
   points: {fileID: 1156380311010425389, guid: 96556ca995cfddd4583a8005f8947be7, type: 3}
   deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
     type: 3}
+  deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
+    type: 3}
 --- !u!60 &2832490092363152778
 PolygonCollider2D:
   m_ObjectHideFlags: 0

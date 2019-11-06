@@ -20,6 +20,7 @@ public class PlayerHP : MonoBehaviour
     //public LevelManager levelManager;
     public GameObject deathParticle;
     public GameObject respawnParticles;
+    public GameObject respawnSound;
     GameObject MassKillEnemies;
     GameObject player;
     GameObject PlayerSprite;
@@ -52,6 +53,7 @@ public class PlayerHP : MonoBehaviour
         {
             hasRespawned = true;
             Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
+            Instantiate(respawnSound, player.transform.position, player.transform.rotation);
             Health = initialHealth;
             healthText.text = "HEALTH: " + Health + "/" + initialHealth;
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;

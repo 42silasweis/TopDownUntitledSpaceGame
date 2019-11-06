@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631500d83e37d0c4d97392e582c4e46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 20
+  enemyHealth: 300
   points: {fileID: 6570971994549291474, guid: caf8843bc09f5b242859612c610fcad6, type: 3}
   winPoints: {fileID: 5934319850360632584, guid: ece560a016348b646a30a72e998b5bf8,
     type: 3}
@@ -199,9 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
-  bulletSpeed: 4
+  bulletSpeed: 2.5
   bulletlifetime: 3
-  shootDelay: 4
+  shootDelay: 5
   fireRange: 4
   distance: {x: 0, y: 0}
 --- !u!1 &6116536044642878553

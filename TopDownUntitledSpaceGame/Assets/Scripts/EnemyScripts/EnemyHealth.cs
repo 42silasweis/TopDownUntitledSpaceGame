@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     GameObject droppedPointMultiplier;
     public GameObject points;
     public GameObject deathParticle;
+    public GameObject deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
                 //Instantiate the object;
                 GameObject droppedPointMultiplier = Instantiate(pointMultiplier, transform.position, transform.rotation);
                 Instantiate(points, transform.position, Quaternion.identity);
+                Instantiate(deathSound, transform.position, Quaternion.identity);
                 droppedPointMultiplier.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
                 Destroy(gameObject);
@@ -47,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyHealth--;
             Instantiate(deathParticle, transform.position, transform.rotation);
+            Instantiate(deathSound, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -10,6 +10,7 @@ public class SpawnScript : MonoBehaviour
     public bool restartAfterPlayerDeath = true;
 
     public GameObject enemy;
+    public GameObject spawnSound;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
     float time;
@@ -63,12 +64,14 @@ public class SpawnScript : MonoBehaviour
         Vector3 playerPosition = (player.position - spawnPosition);
         //Vector2 playerDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
 
-        if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves && time2 > timeTillStart)
+        if (time2 > spawnDelay && time > waveDelay && enemyCount < maxEnemies && wave < maxWaves && time2 > timeTillStart)
         {           
             //If the player to too close to the last randomly set spawnpoint it will keep getting a new random position until it can spawn
             if (playerPosition.magnitude > playerTooClose)
             {
+                time2 = 0;
                 Instantiate(enemy, spawnPosition, Quaternion.identity);
+                Instantiate(spawnSound, spawnPosition, Quaternion.identity);
                 enemyCount++;
                 RandoomPosition();
             }
@@ -89,6 +92,7 @@ public class SpawnScript : MonoBehaviour
 
         if(enemyCount == maxEnemies)
         {
+            resetAfterTimer = 0;
             wave++;
             time = 0;
             enemyCount = 0;
