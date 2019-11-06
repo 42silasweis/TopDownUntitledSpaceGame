@@ -212,12 +212,12 @@ PrefabInstance:
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.73
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.54
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -267,12 +267,12 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: waveDelay
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -292,12 +292,27 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnDelay
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: timeTillStart
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
@@ -417,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 85
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -521,17 +536,17 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnRangeY
-      value: 4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnRangeX
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnDelay
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -734,7 +749,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: timeTillStart
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -755,6 +770,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2124,7 +2149,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnDelay
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2235,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: waveDelay
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2256,7 +2281,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxWaves
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2267,6 +2292,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -3979,7 +4014,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: waveDelay
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4015,12 +4050,12 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetAfterTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4191,7 +4226,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321869925}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4715,7 +4750,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: timeTillStart
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4736,6 +4771,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4835,7 +4880,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: waveDelay
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4856,7 +4901,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxWaves
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -6711,7 +6756,7 @@ PrefabInstance:
     - target: {fileID: 786544315382526668, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786544315382526668, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
@@ -6746,7 +6791,7 @@ PrefabInstance:
     - target: {fileID: 4431496863694344662, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431496863694344662, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
@@ -6830,12 +6875,12 @@ PrefabInstance:
     - target: {fileID: 503109829320795542, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 503109829320795542, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.24
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 503109829320795542, guid: 8bdfcf9c5ae4c4c49bb2a0eea2cba1f9,
         type: 3}
@@ -6966,6 +7011,11 @@ PrefabInstance:
       propertyPath: pointsText
       value: 
       objectReference: {fileID: 90694667}
+    - target: {fileID: 6376771756501920228, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: maxMultiplier
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
       propertyPath: healthText
       value: 
@@ -7096,76 +7146,7 @@ PrefabInstance:
     - target: {fileID: 7073476696665818512, guid: 8bafa9f868c27a544b91945a20f7a330,
         type: 3}
       propertyPath: timeTillStart
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bafa9f868c27a544b91945a20f7a330, type: 3}
---- !u!1001 &7876991413889524164
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8754144366156418374, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemySpawnedSound1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.9558792
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.31795606
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3804.061
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8754144366156418373, guid: 241079ed49132064cad6a0ee3c85f3c8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 241079ed49132064cad6a0ee3c85f3c8, type: 3}

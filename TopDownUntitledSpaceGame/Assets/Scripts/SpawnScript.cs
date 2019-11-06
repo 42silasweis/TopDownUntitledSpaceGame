@@ -15,6 +15,7 @@ public class SpawnScript : MonoBehaviour
     public Vector3 spawnPosition;
     float time;
     float time2;
+    float time3;
     //float timeFrame1 = 6.0f;
     public float timeTillStart = 30.0f;
     public float spawnDelay = 0.2f;
@@ -54,6 +55,7 @@ public class SpawnScript : MonoBehaviour
         resetAfterTimer += Time.deltaTime;
         time += Time.deltaTime;
         time2 += Time.deltaTime;
+        time3 += Time.deltaTime;
 
         if(player == null)
         {
@@ -64,12 +66,12 @@ public class SpawnScript : MonoBehaviour
         Vector3 playerPosition = (player.position - spawnPosition);
         //Vector2 playerDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
 
-        if (time2 > spawnDelay && time > waveDelay && enemyCount < maxEnemies && wave < maxWaves && time2 > timeTillStart)
+        if (time > waveDelay && enemyCount < maxEnemies && wave < maxWaves && time2 > timeTillStart)
         {           
             //If the player to too close to the last randomly set spawnpoint it will keep getting a new random position until it can spawn
-            if (playerPosition.magnitude > playerTooClose)
+            if (playerPosition.magnitude > playerTooClose && time3 > spawnDelay)
             {
-                time2 = 0;
+                time3 = 0;
                 Instantiate(enemy, spawnPosition, Quaternion.identity);
                 Instantiate(spawnSound, spawnPosition, Quaternion.identity);
                 enemyCount++;

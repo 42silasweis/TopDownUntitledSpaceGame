@@ -7,11 +7,12 @@ public class PortalSpawningScript : MonoBehaviour
     GameObject player;
     int PointCount;
     public int neededPoints;
-    public float timer;
+    float timer;
     public float portalDelay;
     bool portalOn;
     bool portalOn2;
     public GameObject portalParticles;
+    GameObject boss;
     private SpriteRenderer spriteRenderer;
     public Sprite[] portalSprite;
     // Start is called before the first frame update
@@ -35,6 +36,7 @@ public class PortalSpawningScript : MonoBehaviour
         }
 
         PointCount = player.GetComponentInChildren<CoinCollect1>().Points;
+
         //Debug.Log(PointCount);
 
         if(PointCount > neededPoints && portalOn == false)
