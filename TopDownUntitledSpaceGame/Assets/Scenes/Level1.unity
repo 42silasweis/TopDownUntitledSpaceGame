@@ -212,12 +212,12 @@ PrefabInstance:
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.56
+      value: -8.29
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.23
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624773, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -272,22 +272,22 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: waveDelay
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxWaves
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnRangeY
-      value: -1
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: spawnRangeX
-      value: -1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -297,22 +297,27 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: playerTooClose
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetAfterTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: timeTillStart
-      value: 30
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: restartAfterPlayerDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
@@ -432,7 +437,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 95
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -563,6 +568,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
@@ -831,7 +846,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxEnemies
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -851,7 +866,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2244,6 +2259,16 @@ PrefabInstance:
       propertyPath: playerTooClose
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
 --- !u!4 &891979835 stripped
@@ -2373,7 +2398,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 60
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -2505,6 +2530,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
@@ -2659,6 +2694,16 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnDelay
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
@@ -4107,7 +4152,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4127,7 +4172,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 80
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4248,7 +4293,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxEnemies
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4264,6 +4309,16 @@ PrefabInstance:
         type: 3}
       propertyPath: playerTooClose
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4791,6 +4846,16 @@ PrefabInstance:
       propertyPath: playerTooClose
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 088ac0a9a7a5fe644a990cb44662cbd1, type: 3}
 --- !u!4 &1508548053 stripped
@@ -4911,7 +4976,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: maxEnemies
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -4931,7 +4996,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -5064,6 +5129,16 @@ PrefabInstance:
       propertyPath: playerTooClose
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetAfterTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
+        type: 3}
+      propertyPath: resetEvery
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 698083963733624794, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: m_Enabled
@@ -5183,7 +5258,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -6537,7 +6612,7 @@ PrefabInstance:
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
       propertyPath: resetEvery
-      value: 85
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 698083963733624772, guid: 088ac0a9a7a5fe644a990cb44662cbd1,
         type: 3}
@@ -7037,7 +7112,7 @@ PrefabInstance:
     - target: {fileID: 4431496863694344662, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431496863694344662, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
@@ -7331,6 +7406,16 @@ PrefabInstance:
       propertyPath: liveText
       value: 
       objectReference: {fileID: 1197027486}
+    - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
+      propertyPath: playerDeathSound
+      value: 
+      objectReference: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
+        type: 3}
+    - target: {fileID: 6376771757226782615, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: delay
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
 --- !u!1001 &7073476697603447356

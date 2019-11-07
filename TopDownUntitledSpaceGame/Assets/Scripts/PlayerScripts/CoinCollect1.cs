@@ -17,7 +17,7 @@ public class CoinCollect1 : MonoBehaviour
     void Start()
     {
         pointsText.text = "SCORE: " + Points;
-        multiplierText.text = "MULTIPLIER: " + pointMultiplier;
+        multiplierText.text = "x" + pointMultiplier;
     }
     private void Update()
     {
@@ -152,7 +152,7 @@ public class CoinCollect1 : MonoBehaviour
         if (collision.gameObject.tag == "MassKillEnemies")
         {
             pointMultiplier = 0;
-            multiplierText.text = "MULTIPLIER: " + pointMultiplier;
+            multiplierText.text = "x" + pointMultiplier;
         }
 
     }

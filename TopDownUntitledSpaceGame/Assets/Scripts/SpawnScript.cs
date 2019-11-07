@@ -6,7 +6,7 @@ public class SpawnScript : MonoBehaviour
 {
     float resetAfterTimer;
     public float resetEvery;
-    public bool resetAfterTime = false;
+    public bool resetAfterTime;
     public bool restartAfterPlayerDeath = true;
 
     public GameObject enemy;
@@ -71,6 +71,7 @@ public class SpawnScript : MonoBehaviour
             //If the player to too close to the last randomly set spawnpoint it will keep getting a new random position until it can spawn
             if (playerPosition.magnitude > playerTooClose && time3 > spawnDelay)
             {
+                resetAfterTimer = 0;
                 time3 = 0;
                 Instantiate(enemy, spawnPosition, Quaternion.identity);
                 Instantiate(spawnSound, spawnPosition, Quaternion.identity);
@@ -82,7 +83,7 @@ public class SpawnScript : MonoBehaviour
                 RandoomPosition();
                 }
         }
-        if (resetAfterTimer > resetEvery && resetAfterTime == true)
+        if (resetAfterTimer > resetEvery && resetAfterTime == true && wave == maxWaves)
         {
             resetAfterTimer = 0;
             maxEnemies = inititalMaxEnemies;
@@ -90,11 +91,11 @@ public class SpawnScript : MonoBehaviour
             time2 = 0;
             enemyCount = 0;
             wave = 0;
+            Debug.Log(time);
         }
 
         if(enemyCount == maxEnemies)
         {
-            resetAfterTimer = 0;
             wave++;
             time = 0;
             enemyCount = 0;
@@ -102,10 +103,20 @@ public class SpawnScript : MonoBehaviour
         }
     }
   
-    void RandoomPosition() //Randomly selects a range itn which to spawn the next Enemy
+    void RandoomPosition() //Randomly selects a range in which to spawn the next Enemy
     {
         spawnPosition = new Vector3(Random.Range(spawnDistanceX2, spawnDistanceX), Random.Range(spawnDistanceY2, spawnDistanceY));
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MassKillEnemies" && restartAfterPlayerDeath == true)
+        {
+            maxEnemies = inititalMaxEnemies;
+            time = 0;
+        }
+    }
+
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "MassKillEnemies" && restartAfterPlayerDeath == true)
@@ -117,6 +128,6 @@ public class SpawnScript : MonoBehaviour
             enemyCount = 0;
             wave = 0;
         }
-    }
+    } */
 
 }

@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyHealth--;
             Instantiate(deathParticle, transform.position, transform.rotation);
-            Instantiate(deathSound, transform.position, transform.rotation);
+            //Instantiate(deathSound, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

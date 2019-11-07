@@ -21,11 +21,13 @@ public class PlayerHP : MonoBehaviour
     public GameObject deathParticle;
     public GameObject respawnParticles;
     public GameObject respawnSound;
+    public GameObject playerDeathSound;
     GameObject MassKillEnemies;
     GameObject player;
     GameObject PlayerSprite;
     bool hasRespawned;
     bool massDestroy;
+    bool firstRespawn;
 
 
     private void Start()
@@ -45,11 +47,31 @@ public class PlayerHP : MonoBehaviour
         //liveText.text = "LIVES: " + Lives;
         liveText.text = "" + Lives;
         //levelManager = FindObjectOfType<LevelManager>();
+
+        //Make the player "Spawn" when starting the game
+        deathTimer = 1;
+        firstRespawn = false;
+        PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        player.GetComponentInParent<PlayerMovement>().enabled = false;
+        GetComponentInChildren<PlayShoot>().enabled = false;
     }
     void Update()
     {
         clearEnemies += Time.deltaTime;
         deathTimer += Time.deltaTime;
+        //Make the player "Spawn" when starting the game part 2 the if statement part to turn everything back on
+        if (deathTimer > respawnAfter && firstRespawn == false)
+        {
+            firstRespawn = true;
+            Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
+            Instantiate(respawnSound, player.transform.position, player.transform.rotation);
+            Health = initialHealth;
+            healthText.text = "HEALTH: " + Health + "/" + initialHealth;
+            PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            //GetComponent<PolygonCollider2D>().enabled = true;
+            GetComponent<PlayerMovement>().enabled = true;
+            GetComponentInChildren<PlayShoot>().enabled = true;
+        }
         if (deathTimer > respawnAfter && Health <= 0 && hasRespawned == false)
         {
             hasRespawned = true;
@@ -137,5 +159,6 @@ public class PlayerHP : MonoBehaviour
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
             healthText.text = "HEALTH: " + Health + "/" + initialHealth;
             Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+            Instantiate(playerDeathSound, player.transform.position, player.transform.rotation);
     }
     }
