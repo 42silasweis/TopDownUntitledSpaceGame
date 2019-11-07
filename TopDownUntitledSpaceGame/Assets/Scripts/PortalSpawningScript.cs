@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PortalSpawningScript : MonoBehaviour
@@ -8,6 +9,8 @@ public class PortalSpawningScript : MonoBehaviour
     int PointCount;
     public int neededPoints;
     float timer;
+    public float portalTimer;
+    public float timeBeforeTP = 2.0f;
     public float portalDelay;
     bool portalOn;
     bool portalOn2;
@@ -56,5 +59,17 @@ public class PortalSpawningScript : MonoBehaviour
                 GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<Animator>().enabled = false;
             }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        portalTimer += Time.deltaTime;
+        if(collision.gameObject.tag == "Player" && portalTimer > timeBeforeTP)
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        portalTimer = 0;
     }
 }
