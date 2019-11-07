@@ -91,7 +91,6 @@ public class SpawnScript : MonoBehaviour
             time2 = 0;
             enemyCount = 0;
             wave = 0;
-            Debug.Log(time);
         }
 
         if(enemyCount == maxEnemies)
