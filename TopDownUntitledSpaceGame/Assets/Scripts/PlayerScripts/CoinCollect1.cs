@@ -40,7 +40,7 @@ public class CoinCollect1 : MonoBehaviour
             {
                 pointMultiplier++;
                 Destroy(collision.gameObject);
-                multiplierText.text = "MULTIPLIER: " + pointMultiplier;
+                multiplierText.text = "x " + pointMultiplier;
             }
         }
 

@@ -9,11 +9,13 @@ public class BossHealthScript : MonoBehaviour
     public GameObject points;
     public GameObject winPoints;
     public GameObject deathParticle;
+    public GameObject portal;
     Slider healthSlider;
     int initialHealth;
     Slider sliderBar;
     GameObject sliderBar1;
     GameObject sliderBar2;
+    GameObject sliderBarName;
     bool isDead = false;
 
     // Start is called before the first frame update
@@ -22,23 +24,15 @@ public class BossHealthScript : MonoBehaviour
         sliderBar = GameObject.Find("BossHealthSlider").GetComponent<Slider>();
         sliderBar1 = GameObject.FindGameObjectWithTag("SliderBackground");
         sliderBar2 = GameObject.FindGameObjectWithTag("SliderFill");
+        sliderBarName = GameObject.FindGameObjectWithTag("BossName");
         healthSlider = sliderBar;
         sliderBar1.GetComponent<Image>().enabled = true;
         sliderBar2.GetComponent<Image>().enabled = true;
+        sliderBarName.GetComponent<Text>().enabled = true;
         initialHealth = enemyHealth;
         healthSlider.maxValue = enemyHealth;
         healthSlider.value = enemyHealth;
     }
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "MassKillEnemies")
-        {
-            enemyHealth--;
-            Instantiate(deathParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-    } */
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,6 +51,8 @@ public class BossHealthScript : MonoBehaviour
                 Instantiate(deathParticle, transform.position, transform.rotation);
                 sliderBar1.GetComponent<Image>().enabled = false;
                 sliderBar2.GetComponent<Image>().enabled = false;
+                sliderBarName.GetComponent<Text>().enabled = false;
+                Instantiate(portal, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

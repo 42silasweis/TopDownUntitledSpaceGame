@@ -42,7 +42,8 @@ public class PlayerHP : MonoBehaviour
         //PlayerPrefs.SetInt("Lives", Lives);
         initialHealth = Health;
         healthText.text = "HP: " + Health + "/" + initialHealth;
-        liveText.text = "LIVES: " + Lives;
+        //liveText.text = "LIVES: " + Lives;
+        liveText.text = "" + Lives;
         //levelManager = FindObjectOfType<LevelManager>();
     }
     void Update()
@@ -87,7 +88,7 @@ public class PlayerHP : MonoBehaviour
                 }
             }
         }
-            if (collision.gameObject.tag == "Enemy")
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
             {
                 gethurt();
 
@@ -108,8 +109,9 @@ public class PlayerHP : MonoBehaviour
         {
             Lives--;
             liveText.text = "LIVES: " + Lives;
+            liveText.text = "" + Lives;
             //Health = initialHealth;
-        }
+    }
     void gethurthalf()
     {
         Health -= 0.5f;
@@ -129,7 +131,7 @@ public class PlayerHP : MonoBehaviour
             massDestroy = true;
             hasRespawned = false;
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        //GetComponent<PolygonCollider2D>().enabled = false;
+            //GetComponent<PolygonCollider2D>().enabled = false;
             player.GetComponentInParent<PlayerMovement>().enabled = false;
             GetComponentInChildren<PlayShoot>().enabled = false;
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
