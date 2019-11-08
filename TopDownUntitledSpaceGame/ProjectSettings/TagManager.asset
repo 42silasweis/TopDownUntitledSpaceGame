@@ -28,6 +28,9 @@ TagManager:
   - SliderBackground
   - SliderFill
   - BossName
+  - PortalSliderBackground
+  - PortalSliderFill
+  - PortalTimerSlider
   layers:
   - Default
   - TransparentFX

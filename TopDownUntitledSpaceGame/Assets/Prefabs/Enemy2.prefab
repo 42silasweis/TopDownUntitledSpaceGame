@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d49b4d5fb489934b9c9af39d75797da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 0.8
+  chaseSpeed: 1
   chaseTriggerDistance: 100
   rotationSpeed: 4
 --- !u!114 &5966644276719708630
@@ -309,4 +309,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67459e929b7a86d4a9d8e026ca76887e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterSpawnDelay: 0.4
+  afterSpawnDelay: 0.3

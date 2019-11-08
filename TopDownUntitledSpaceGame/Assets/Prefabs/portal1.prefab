@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6751918420847861885}
   - component: {fileID: 6751918420847861873}
   - component: {fileID: 6751918420847861874}
+  - component: {fileID: 210004296}
   m_Layer: 18
   m_Name: portal1
   m_TagString: Portal
@@ -156,8 +157,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31af27f4b97796e4eae789cee4a5f857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededPoints: 850000
+  neededPoints: 750000
+  portalTimer: 0
+  timeBeforeTP: 2
   portalDelay: 1.5
   portalParticles: {fileID: 8477935215260479346, guid: 9cd19e2fc92a840448e93b9837ab62dd,
     type: 3}
   portalSprite: []
+--- !u!50 &210004296
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751918420847861886}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
