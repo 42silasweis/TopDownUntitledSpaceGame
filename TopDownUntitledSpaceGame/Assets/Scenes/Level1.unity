@@ -7073,20 +7073,6 @@ PrefabInstance:
       propertyPath: liveText
       value: 
       objectReference: {fileID: 1197027486}
-    - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
-      propertyPath: playerDeathSound
-      value: 
-      objectReference: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
-        type: 3}
-    - target: {fileID: 6376771757226782615, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
-        type: 3}
-      propertyPath: delay
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 219016961, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
-      propertyPath: bullet2NeededPoints
-      value: 200000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
 --- !u!1001 &7073476697603447356

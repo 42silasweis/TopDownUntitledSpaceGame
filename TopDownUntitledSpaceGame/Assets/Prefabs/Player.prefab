@@ -52,7 +52,7 @@ MonoBehaviour:
   shootDelay1: 0.22
   shootDelay2: 0.2
   bullet1NeededPoints: 15000
-  bullet2NeededPoints: 150000
+  bullet2NeededPoints: 200000
 --- !u!1 &1776245525438966493
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rotationSpeed: 6
-  delay: 0.2
+  delay: 0.1
   Particle: {fileID: 463224640550823816, guid: 2338536c86459624ea191608da8b5bed, type: 3}
 --- !u!60 &725651926
 PolygonCollider2D:
@@ -332,4 +332,6 @@ MonoBehaviour:
   respawnParticles: {fileID: 8033749413682590123, guid: 3521a7b289411894aa64fca8aa0bc6b7,
     type: 3}
   respawnSound: {fileID: 9163079954570070595, guid: cc644b7dfa5e26d4b81011a6261d020c,
+    type: 3}
+  playerDeathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
     type: 3}

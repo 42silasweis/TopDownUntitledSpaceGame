@@ -13,11 +13,14 @@ public class CoinCollect1 : MonoBehaviour
     public int pointMultiplier;
     public int maxMultiplier = 100;
     string Points1;
+    int prefPoints1;
 
     void Start()
     {
         pointsText.text = "SCORE: " + Points;
         multiplierText.text = "x" + pointMultiplier;
+
+        prefPoints1 = PlayerPrefs.GetInt("Lvl1Score");
     }
     private void Update()
     {
@@ -27,7 +30,12 @@ public class CoinCollect1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        prefPoints1 = PlayerPrefs.GetInt("Lvl1Score");
+        Debug.Log(prefPoints1);
+        if (Points > prefPoints1)
+        {
         PlayerPrefs.SetInt("Lvl1Score", Points);
+        }
         //This gives the player a set multiplier
         if (collision.gameObject.tag == "PointMultiplier")
         {
