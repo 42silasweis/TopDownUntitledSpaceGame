@@ -5,13 +5,16 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     private Vector3 MouseCoords;
-    public GameObject crosshair;
+    //public GameObject crosshair;
     public float MouseSensitivity = 10.0f;
     void Update()
     {
         MouseCoords = Input.mousePosition;
         MouseCoords = Camera.main.ScreenToWorldPoint(MouseCoords);
-        crosshair.transform.position = Vector2.Lerp(transform.position, MouseCoords, MouseSensitivity);
+        //Vector3 MouseCoords = MouseCoords.position;
+        MouseCoords.z = transform.position.z;
+        transform.position = MouseCoords;
+        //crosshair.transform.position = Vector2.Lerp(transform.position, MouseCoords, MouseSensitivity);
         //print(MouseCoords);
 
     }

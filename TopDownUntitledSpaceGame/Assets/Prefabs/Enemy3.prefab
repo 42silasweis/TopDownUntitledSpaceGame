@@ -124,7 +124,7 @@ MonoBehaviour:
   pointMultiplier: {fileID: 1319256357904151370, guid: 0a6e9a99d4cc8664389b0f15eee6cc67,
     type: 3}
   points: {fileID: 1156380311010425389, guid: 96556ca995cfddd4583a8005f8947be7, type: 3}
-  deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
+  deathParticle: {fileID: 821232569142608976, guid: 7f32f06b9eb774749950523ad9ac4695,
     type: 3}
   deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
     type: 3}

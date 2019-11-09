@@ -121,7 +121,9 @@ public class PlayerHP : MonoBehaviour
 
                     if (Lives < 0)
                     {
-                        //SceneManager.LoadScene("GameOver");
+                        Lives = 0;
+                        liveText.text = "" + Lives;
+                        SceneManager.LoadScene("Lose");
                         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     }
                 }
@@ -130,7 +132,7 @@ public class PlayerHP : MonoBehaviour
         void loselife()
         {
             Lives--;
-            liveText.text = "LIVES: " + Lives;
+            //liveText.text = "LIVES: " + Lives;
             liveText.text = "" + Lives;
             //Health = initialHealth;
     }

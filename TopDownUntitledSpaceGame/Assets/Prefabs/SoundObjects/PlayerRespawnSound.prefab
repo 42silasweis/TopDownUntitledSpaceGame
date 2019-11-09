@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e9c914b8b717d47bc65ce05c39ac0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleLifeTime: 1.5
+  particleLifeTime: 1.4
 --- !u!82 &9163079954570070594
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
