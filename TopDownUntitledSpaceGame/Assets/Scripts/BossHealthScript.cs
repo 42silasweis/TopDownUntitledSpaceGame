@@ -18,6 +18,8 @@ public class BossHealthScript : MonoBehaviour
     GameObject sliderBarName;
     bool isDead = false;
 
+    public int Level = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +55,19 @@ public class BossHealthScript : MonoBehaviour
                 sliderBar2.GetComponent<Image>().enabled = false;
                 sliderBarName.GetComponent<Text>().enabled = false;
                 Instantiate(portal, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                switch (Level)
+                {
+                    case 3:
+                        PlayerPrefs.SetInt("Lvl3Complete", 1);
+                        break;
+                    case 2:
+                        PlayerPrefs.SetInt("Lvl2Complete", 1);
+                        break;
+                    case 1:
+                        PlayerPrefs.SetInt("Lvl1Complete", 1);
+                        break;
+                }
+                        Destroy(gameObject);
             }
         }
         /*

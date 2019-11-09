@@ -73,7 +73,7 @@ public class PortalSpawningScript : MonoBehaviour
                 spriteRenderer.sprite = portalSprite[6];
                 GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<Animator>().enabled = false;
-            Debug.Log(portalOn2);
+                //Debug.Log(portalOn2);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

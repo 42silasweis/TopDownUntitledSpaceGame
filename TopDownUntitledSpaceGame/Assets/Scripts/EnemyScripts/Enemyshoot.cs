@@ -33,7 +33,7 @@ public class Enemyshoot : MonoBehaviour
         {
             timer = 0;
             GameObject bullet = Instantiate(prefab, transform.position, transform.rotation);
-            Debug.Log(playerPosition);
+            //Debug.Log(playerPosition);
             Vector2 shootDir = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y);
             shootDir.Normalize();
             bullet.GetComponent<Rigidbody2D>().velocity = shootDir * bulletSpeed;
