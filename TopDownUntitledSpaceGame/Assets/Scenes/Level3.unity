@@ -6238,12 +6238,12 @@ PrefabInstance:
     - target: {fileID: 7073476696665818512, guid: 8bafa9f868c27a544b91945a20f7a330,
         type: 3}
       propertyPath: pointsPlayerNeeds
-      value: 900000
+      value: 1200000
       objectReference: {fileID: 0}
     - target: {fileID: 7073476696665818512, guid: 8bafa9f868c27a544b91945a20f7a330,
         type: 3}
       propertyPath: timeTillStart
-      value: 100
+      value: 110
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bafa9f868c27a544b91945a20f7a330, type: 3}

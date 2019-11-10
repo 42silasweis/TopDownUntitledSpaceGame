@@ -1973,7 +1973,7 @@ PrefabInstance:
     - target: {fileID: 7073476696665818512, guid: 8bafa9f868c27a544b91945a20f7a330,
         type: 3}
       propertyPath: pointsPlayerNeeds
-      value: 1500000
+      value: 1600000
       objectReference: {fileID: 0}
     - target: {fileID: 7073476696665818512, guid: 8bafa9f868c27a544b91945a20f7a330,
         type: 3}
@@ -8192,11 +8192,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4572508633760864024, guid: 96ecd1681c61cfd4d898233cfd695535,
-        type: 3}
-      propertyPath: m_WholeNumbers
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1625542267297946448, guid: 96ecd1681c61cfd4d898233cfd695535,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -8206,26 +8201,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406971204513379363, guid: 96ecd1681c61cfd4d898233cfd695535,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0000060797
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406971204513379363, guid: 96ecd1681c61cfd4d898233cfd695535,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406971204513379363, guid: 96ecd1681c61cfd4d898233cfd695535,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 168.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1431309812936307397, guid: 96ecd1681c61cfd4d898233cfd695535,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ecd1681c61cfd4d898233cfd695535, type: 3}
