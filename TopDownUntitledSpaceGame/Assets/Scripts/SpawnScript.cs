@@ -26,6 +26,7 @@ public class SpawnScript : MonoBehaviour
     public int maxWaves = 6;
     public float waveDelay = 5;
     public int maxEnemies = 5;
+    public int addedPerWave = 1;
     int inititalMaxEnemies;
     //public string wave2;
 
@@ -98,7 +99,8 @@ public class SpawnScript : MonoBehaviour
             wave++;
             time = 0;
             enemyCount = 0;
-            maxEnemies += 1;
+            maxEnemies += addedPerWave;
+;
         }
     }
   

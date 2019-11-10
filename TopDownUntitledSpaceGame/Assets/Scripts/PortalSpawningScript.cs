@@ -20,14 +20,18 @@ public class PortalSpawningScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite[] portalSprite;
 
+    int Level;
 
     bool sliderSpriteOn = false;
     Slider sliderBar;
     GameObject sliderBar1;
     GameObject sliderBar2;
+
+    int isLevel4Complete;
     // Start is called before the first frame update
     void Start()
     {
+        isLevel4Complete = PlayerPrefs.GetInt("Lvl4Complete");
         sliderBar = GameObject.FindGameObjectWithTag("PortalTimerSlider").GetComponent<Slider>();
         sliderBar1 = GameObject.FindGameObjectWithTag("PortalSliderBackground");
         sliderBar2 = GameObject.FindGameObjectWithTag("PortalSliderFill");
@@ -42,6 +46,10 @@ public class PortalSpawningScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         portalSprite = Resources.LoadAll<Sprite>("portal");
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        Level = player.GetComponentInChildren<CoinCollect1>().Level;
+
     }
 
     // Update is called once per frame
@@ -92,7 +100,15 @@ public class PortalSpawningScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" && portalTimer > timeBeforeTP)
         {
-            SceneManager.LoadScene("LevelSelect");
+            if (Level == 4 && isLevel4Complete == 0) //If the player is completing level 4 for the first time you go to the Win scene 
+            {                                        //if it is not the first time completing level 4 you go back to Level Select
+                SceneManager.LoadScene("Win");
+                PlayerPrefs.SetInt("Lvl4Complete", 1);
+            }
+            else
+            {
+                SceneManager.LoadScene("LevelSelect");
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other)

@@ -16,6 +16,7 @@ public class BossHealthScript : MonoBehaviour
     GameObject sliderBar1;
     GameObject sliderBar2;
     GameObject sliderBarName;
+    GameObject player;
     bool isDead = false;
 
     public int Level = 1;
@@ -23,6 +24,7 @@ public class BossHealthScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         sliderBar = GameObject.Find("BossHealthSlider").GetComponent<Slider>();
         sliderBar1 = GameObject.FindGameObjectWithTag("SliderBackground");
         sliderBar2 = GameObject.FindGameObjectWithTag("SliderFill");
@@ -34,6 +36,7 @@ public class BossHealthScript : MonoBehaviour
         initialHealth = enemyHealth;
         healthSlider.maxValue = enemyHealth;
         healthSlider.value = enemyHealth;
+        Level = player.GetComponentInChildren<CoinCollect1>().Level;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +60,10 @@ public class BossHealthScript : MonoBehaviour
                 Instantiate(portal, transform.position, Quaternion.identity);
                 switch (Level)
                 {
+                    case 4:
+                        //PlayerPrefs.SetInt("Lvl4Complete", 1);
+                        Debug.Log(points);
+                        break;
                     case 3:
                         PlayerPrefs.SetInt("Lvl3Complete", 1);
                         break;

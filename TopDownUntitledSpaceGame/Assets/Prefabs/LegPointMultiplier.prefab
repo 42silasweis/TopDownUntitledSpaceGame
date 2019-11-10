@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8826927908496916950}
   - component: {fileID: 8972120026872029816}
   - component: {fileID: 4961629110677516876}
+  - component: {fileID: 6717303565447850654}
   m_Layer: 17
   m_Name: LegPointMultiplier
   m_TagString: PointMultiplier
@@ -121,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03005889, y: 0.049500875}
-  m_Size: {x: 0.38723773, y: 0.53912354}
+  m_Offset: {x: 0.05437499, y: 0.049500875}
+  m_Size: {x: 0.49930406, y: 0.5391235}
   m_Direction: 0
 --- !u!114 &1579159867926829057
 MonoBehaviour:
@@ -184,3 +185,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28968d38f4ff71f47bcb11352f0ea97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &6717303565447850654
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319256357904151370}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008951072, y: 0.044629835}
+  m_Size: {x: 0.2995595, y: 0.43196106}
+  m_Direction: 0

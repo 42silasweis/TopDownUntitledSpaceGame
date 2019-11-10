@@ -8,13 +8,13 @@ public class EnemyStaysNearPlayer : MonoBehaviour
     public float chaseSpeed = 0.6f;
     public float stayDistance = 5.0f;
     public float rotationSpeed = 3.0f;
-    float afterSpawnDelay = 0.8f;
     float startTimer;
+    /*float afterSpawnDelay = 0.8f;
     Vector3 startPosition;
     bool spawnedIn = false;
 
+    Vector3 bulletDist; */
     bool canChase;
-    Vector3 bulletDist;
     GameObject target;
     public float speed = 3.0f;
     public float tooCloseToBullet = 1.0f;
@@ -48,6 +48,7 @@ public class EnemyStaysNearPlayer : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
+
         //AvoidingBullets start here
         timer += Time.deltaTime;
         if (target == null)

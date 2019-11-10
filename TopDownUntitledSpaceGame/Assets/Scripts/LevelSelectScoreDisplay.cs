@@ -38,9 +38,9 @@ public class LevelSelectScoreDisplay : MonoBehaviour
         IsLevel3Unlocked = PlayerPrefs.GetInt("Lvl2Complete");
         IsLevel4Unlocked = PlayerPrefs.GetInt("Lvl3Complete");
 
-        Debug.Log(IsLevel2Unlocked);
-        Debug.Log(IsLevel3Unlocked);
-        Debug.Log(IsLevel4Unlocked);
+        //Debug.Log(IsLevel2Unlocked);
+        //Debug.Log(IsLevel3Unlocked);
+        //Debug.Log(IsLevel4Unlocked);
 
         Level2.GetComponent<Button>().interactable = false;
         Level3.GetComponent<Button>().interactable = false;

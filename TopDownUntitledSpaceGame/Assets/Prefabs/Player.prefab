@@ -307,6 +307,7 @@ MonoBehaviour:
   multiplierText: {fileID: 0}
   pointMultiplier: 0
   maxMultiplier: 150
+  Level: 1
 --- !u!114 &1257708038
 MonoBehaviour:
   m_ObjectHideFlags: 0

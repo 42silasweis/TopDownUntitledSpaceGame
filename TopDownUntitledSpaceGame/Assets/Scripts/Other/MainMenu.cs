@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public int Lives = 3;
+    int Points;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,37 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-    public void LoadLevel1()
+    public void ContinuePlaying() //For the Win scene
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+    public void ResetAndContinue() //This is for the Win Scene
+    {
+        PlayerPrefs.SetInt("Lvl1Score", Points);
+        PlayerPrefs.SetInt("Lvl2Score", Points);
+        PlayerPrefs.SetInt("Lvl3Score", Points);
+        PlayerPrefs.SetInt("Lvl4Score", Points);
+
+        PlayerPrefs.SetInt("Lvl1Complete", 0);
+        PlayerPrefs.SetInt("Lvl2Complete", 0);
+        PlayerPrefs.SetInt("Lvl3Complete", 0);
+        PlayerPrefs.SetInt("Lvl4Complete", 0);
+
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void ResetScores() //For Title Screen
+    {
+        PlayerPrefs.SetInt("Lvl1Score", Points);
+        PlayerPrefs.SetInt("Lvl2Score", Points);
+        PlayerPrefs.SetInt("Lvl3Score", Points);
+        PlayerPrefs.SetInt("Lvl4Score", Points);
+
+        PlayerPrefs.SetInt("Lvl1Complete", 0);
+        PlayerPrefs.SetInt("Lvl2Complete", 0);
+        PlayerPrefs.SetInt("Lvl3Complete", 0);
+        PlayerPrefs.SetInt("Lvl4Complete", 0);
+    }
+    public void LoadLevel1() //For Level Select LoadLevel1-LoadLevel4
     {
         SceneManager.LoadScene("Level1");
         
@@ -33,17 +64,18 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadLevel4()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level4");
     }
+
     public void LevelSelect()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("LevelSelect"); // For Title Screen AKA MainMenu
     }
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");//To go back to Main Menu from Level Select
     }
-    public void QuitGame()
+    public void QuitGame()//For Title Screen AKA MainMenu
     {
         Application.Quit();
     }

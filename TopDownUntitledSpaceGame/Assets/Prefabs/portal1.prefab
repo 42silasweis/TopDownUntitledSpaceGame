@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31af27f4b97796e4eae789cee4a5f857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededPoints: 750000
+  neededPoints: 0
   portalTimer: 0
-  timeBeforeTP: 2
+  timeBeforeTP: 1
   portalDelay: 1.5
   portalParticles: {fileID: 8477935215260479346, guid: 9cd19e2fc92a840448e93b9837ab62dd,
     type: 3}
