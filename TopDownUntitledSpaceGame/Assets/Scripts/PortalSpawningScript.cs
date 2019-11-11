@@ -26,6 +26,7 @@ public class PortalSpawningScript : MonoBehaviour
     Slider sliderBar;
     GameObject sliderBar1;
     GameObject sliderBar2;
+    public GameObject activateSound;
 
     int isLevel4Complete;
     // Start is called before the first frame update
@@ -82,6 +83,13 @@ public class PortalSpawningScript : MonoBehaviour
                 GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<Animator>().enabled = false;
                 //Debug.Log(portalOn2);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+        Instantiate(activateSound, transform.position, transform.rotation);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2832490092363152778}
   - component: {fileID: 907943747322302029}
   - component: {fileID: 1650620728}
-  m_Layer: 8
+  m_Layer: 21
   m_Name: Enemy3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f320bb69e466c31468ef2117ee779301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 0.6
+  chaseSpeed: 0.8
   chaseTriggerDistance: 1000
   rotationSpeed: 2
   speed: 5
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 3273823375176606207}
   - component: {fileID: 3273823375402563920}
   - component: {fileID: 3273823375402563923}
-  m_Layer: 8
+  m_Layer: 21
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}

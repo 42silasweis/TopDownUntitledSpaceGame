@@ -168,6 +168,7 @@ public class PlayerHP : MonoBehaviour
             //GetComponent<PolygonCollider2D>().enabled = false;
             player.GetComponentInParent<PlayerMovement>().enabled = false;
             GetComponentInChildren<PlayShoot>().enabled = false;
+            GetComponentInChildren<OtherPlayerShootScirpt>().enabled = false;
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
             healthText.text = "HEALTH: " + Health;// + "/" + initialHealth;
             healthSlider.value = Health;

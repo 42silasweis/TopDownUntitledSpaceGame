@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1467627443826164810}
   - component: {fileID: 154563202282662906}
   - component: {fileID: 3128364596398962573}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: Enemy2NoDelay
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 8766230688693766545}
   - component: {fileID: 2582435875678850656}
   - component: {fileID: 8188577807233953328}
-  m_Layer: 8
+  m_Layer: 20
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}

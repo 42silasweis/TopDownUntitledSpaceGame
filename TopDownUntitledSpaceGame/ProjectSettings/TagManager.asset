@@ -51,11 +51,11 @@ TagManager:
   - Wall
   - PointMultiplier
   - Portal
+  - Enemy1
   - Enemy2
-  - 
-  - 
-  - 
-  - 
+  - Enemy3
+  - Enemy4
+  - Boss
   - 
   - 
   - 

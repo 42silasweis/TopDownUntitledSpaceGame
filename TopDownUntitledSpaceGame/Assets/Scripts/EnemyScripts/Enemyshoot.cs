@@ -6,7 +6,7 @@ public class Enemyshoot : MonoBehaviour
 {
     Transform player;
     public GameObject prefab;
-    public float bulletSpeed = 10.0f;
+    public float bulletSpeed;
     public float bulletlifetime = 1.0f;
     public float shootDelay = 1.0f;
     public float fireRange = 1.0f;

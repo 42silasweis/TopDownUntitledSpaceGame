@@ -23,7 +23,7 @@ public class DisableAndEnableEnemyStayScript : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<EnemyStaysNearPlayer>().enabled = true;
-            GetComponent<EnemyHealth>().enabled = true;
+            GetComponent<EnemyHealtyh2>().enabled = true;
             spawnedIn = true;
         }
     }

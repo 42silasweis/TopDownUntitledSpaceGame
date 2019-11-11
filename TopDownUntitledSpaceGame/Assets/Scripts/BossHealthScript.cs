@@ -9,6 +9,8 @@ public class BossHealthScript : MonoBehaviour
     public GameObject points;
     public GameObject winPoints;
     public GameObject deathParticle;
+    public GameObject deathSound;
+    public GameObject getHitSound;
     public GameObject portal;
     Slider healthSlider;
     int initialHealth;
@@ -46,6 +48,7 @@ public class BossHealthScript : MonoBehaviour
             enemyHealth--;
             healthSlider.value = enemyHealth;
             Instantiate(points, transform.position, Quaternion.identity);
+            Instantiate(getHitSound, transform.position, transform.rotation);
             //Instantiate(deathParticle, transform.position, transform.rotation);
 
             if (enemyHealth <= 0 && isDead == false)
@@ -54,10 +57,11 @@ public class BossHealthScript : MonoBehaviour
                 //Instantiate the object;
                 Instantiate(winPoints, transform.position, Quaternion.identity);
                 Instantiate(deathParticle, transform.position, transform.rotation);
+                Instantiate(deathSound, transform.position, transform.rotation);
+                Instantiate(portal, transform.position, Quaternion.identity);
                 sliderBar1.GetComponent<Image>().enabled = false;
                 sliderBar2.GetComponent<Image>().enabled = false;
                 sliderBarName.GetComponent<Text>().enabled = false;
-                Instantiate(portal, transform.position, Quaternion.identity);
                 switch (Level)
                 {
                     case 4:

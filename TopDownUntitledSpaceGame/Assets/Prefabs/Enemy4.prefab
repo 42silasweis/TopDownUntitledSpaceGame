@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 1633263981025206146}
   - component: {fileID: 1633263981025206149}
   - component: {fileID: 1633263981025206148}
-  - component: {fileID: 1633263981025206144}
+  - component: {fileID: 1831889987551265549}
   - component: {fileID: 4123276851947245842}
   - component: {fileID: 4123276851947245844}
   - component: {fileID: 6099561352712415181}
-  - component: {fileID: 979925312071328782}
-  m_Layer: 8
+  m_Layer: 22
   m_Name: Enemy4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -108,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1633263981025206144
+--- !u!114 &1831889987551265549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1633263981025206150}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c5f245c62b1885418fb0e3d09773ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 5
@@ -128,6 +127,8 @@ MonoBehaviour:
   deathParticle: {fileID: 1706433741987781087, guid: 957c64ab9310eb5478a01a1b145b88d2,
     type: 3}
   deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
+    type: 3}
+  getHitSound: {fileID: 8788403744897476408, guid: ac79e0f1163053f468afbe98a8f01b02,
     type: 3}
 --- !u!114 &4123276851947245842
 MonoBehaviour:
@@ -198,24 +199,6 @@ PolygonCollider2D:
       - {x: -0.06413868, y: -0.11735575}
       - {x: 0.17653191, y: -0.180912}
       - {x: 0.26956147, y: -0.062415935}
---- !u!114 &979925312071328782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633263981025206150}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d095f58630d484e97b1bb7e7d8356f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
-  bulletSpeed: 2.5
-  bulletlifetime: 4
-  shootDelay: 2
-  fireRange: 3
-  distance: {x: 0, y: 0}
 --- !u!1 &9073410125239082658
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +212,7 @@ GameObject:
   - component: {fileID: 2853722562677348689}
   - component: {fileID: 8498149643100961025}
   - component: {fileID: 5942900974423396406}
-  m_Layer: 8
+  m_Layer: 22
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -344,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 3
   bulletlifetime: 3
   shootDelay: 1.5
   fireRange: 3
