@@ -186,8 +186,9 @@ MonoBehaviour:
   chaseTriggerDistance: 1000
   rotationSpeed: 2
   speed: 5
-  tooCloseToBullet: 1.5
+  tooCloseToBullet: 1.25
   dist: 10000
+  distFromPlayer: 0
 --- !u!114 &1650620728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f420630d4f11cab459b7796d72e7d7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterSpawnDelay: 0.07
+  afterSpawnDelay: 0
 --- !u!1 &5383738364043833427
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class SmartAIAvoidsBullets : MonoBehaviour
     public float speed = 3.0f;
     public float tooCloseToBullet = 1.0f;
     public float dist = 10000;
+    public float distFromPlayer;
     float timer;
 
     void Start()
@@ -58,7 +59,7 @@ public class SmartAIAvoidsBullets : MonoBehaviour
             //float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = -transform.up * speed;
         }
-        if (chaseDirection.magnitude > 0.5)
+        if (chaseDirection.magnitude > 1.35)
         {
             target = null;
             canChase = true;
