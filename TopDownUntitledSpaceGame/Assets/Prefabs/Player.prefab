@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 219016960}
   - component: {fileID: 219016961}
+  - component: {fileID: 2001235025}
+  - component: {fileID: 2001235023}
   m_Layer: 13
   m_Name: Weapon
   m_TagString: Particle
@@ -38,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219016959}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f410415306a53774abb71ca948f7b838, type: 3}
   m_Name: 
@@ -51,8 +53,46 @@ MonoBehaviour:
   shootDelay: 0.25
   shootDelay1: 0.22
   shootDelay2: 0.2
-  bullet1NeededPoints: 15000
-  bullet2NeededPoints: 200000
+  bullet1NeededPoints: 30000
+  bullet2NeededPoints: 300000
+  bulletBoostTime: 60
+  bulletBoostLastingTime: 30
+  spawnRangeX: 0.2
+  spawnRangeY: 0.2
+--- !u!58 &2001235025
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219016959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.044094443, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.031292558
+--- !u!114 &2001235023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219016959}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36ac7d9fb74fe8458d77e8266c8774d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab1: {fileID: 98062153606517399, guid: d730488688a58544a90c28db7d5fa7ca, type: 3}
+  bulletSpeed: 12
+  bulletlifetime: 4
+  shootDelay: 0.05
+  spawnRangeX: 0.5
+  spawnRangeY: 0.5
 --- !u!1 &1776245525438966493
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +347,7 @@ MonoBehaviour:
   multiplierText: {fileID: 0}
   pointMultiplier: 0
   maxMultiplier: 150
-  Level: 1
+  Level: 4
 --- !u!114 &1257708038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +367,7 @@ MonoBehaviour:
   Lives: 3
   deathTimer: 0
   healthText: {fileID: 0}
+  healthSlider: {fileID: 0}
   liveText: {fileID: 0}
   deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
     type: 3}

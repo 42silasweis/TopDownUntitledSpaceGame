@@ -6790,6 +6790,11 @@ PrefabInstance:
       propertyPath: multiplierText
       value: 
       objectReference: {fileID: 1455949846}
+    - target: {fileID: 6376771756501920228, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: Level
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
       propertyPath: healthText
       value: 
