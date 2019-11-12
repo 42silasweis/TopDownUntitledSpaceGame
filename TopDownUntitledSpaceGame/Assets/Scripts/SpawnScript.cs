@@ -89,7 +89,7 @@ public class SpawnScript : MonoBehaviour
             resetAfterTimer = 0;
             maxEnemies = inititalMaxEnemies;
             time = 0;
-            time2 = 0;
+            //time2 = 0;
             enemyCount = 0;
             wave = 0;
         }

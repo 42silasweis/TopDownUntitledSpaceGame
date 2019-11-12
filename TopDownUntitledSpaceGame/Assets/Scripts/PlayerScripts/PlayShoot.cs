@@ -21,7 +21,7 @@ public class PlayShoot : MonoBehaviour
     bool boostActive2 = false;
     bool boostActive3 = false;
 
-    bool boostActive = false;
+    public bool boostActive = false;
     public float bulletBoostTime = 30;
     public float bulletBoostLastingTime = 30;
     float timer2;
@@ -75,7 +75,6 @@ public class PlayShoot : MonoBehaviour
             boostActive2 = true;
             boostActive = true;
             GetComponent<OtherPlayerShootScirpt>().enabled = true;
-
         }
         if (currentPoints > bullet2NeededPoints && timer3 > bulletBoostLastingTime && boostActive3 == false)
         {
@@ -127,6 +126,10 @@ public class PlayShoot : MonoBehaviour
     {
         if (collision.gameObject.tag == "MassKillEnemies")
         {
+            timer2 = 0;
+            timer3 = 0;
+            boostActive3 = false;
+            boostActive2 = false;
             boostActive = false;
             GetComponent<OtherPlayerShootScirpt>().enabled = false;
         }
@@ -135,6 +138,10 @@ public class PlayShoot : MonoBehaviour
     {
         if (collision.gameObject.tag == "MassKillEnemies")
         {
+            timer2 = 0;
+            timer3 = 0;
+            boostActive3 = false;
+            boostActive2 = false;
             boostActive = false;
             GetComponent<OtherPlayerShootScirpt>().enabled = false;
         }
