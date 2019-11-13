@@ -26,6 +26,9 @@ public class PlayShoot : MonoBehaviour
     public float bulletBoostLastingTime = 30;
     float timer2;
     float timer3;
+    float respawnTimer;
+    public float respawnDelay;
+    bool hasRespawned = true;
 
     public float spawnRangeX = 0.2f;
     public float spawnRangeY = 0.2f;
@@ -48,6 +51,14 @@ public class PlayShoot : MonoBehaviour
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
         timer3 += Time.deltaTime;
+        respawnTimer += Time.deltaTime;
+
+        if(respawnTimer > respawnDelay && hasRespawned == false)
+        {
+            hasRespawned = true;
+            boostActive = false;
+        }
+
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -84,8 +95,6 @@ public class PlayShoot : MonoBehaviour
             boostActive = false;
             GetComponent<OtherPlayerShootScirpt>().enabled = false;
         }
-
-        timer += Time.deltaTime;
         if (Input.GetButton("Fire1") && timer > shootDelay && boostActive == false && currentPoints > bullet1NeededPoints)
         {
             timer = 0;
@@ -122,27 +131,17 @@ public class PlayShoot : MonoBehaviour
             Destroy(bullet, bulletlifetime);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "MassKillEnemies")
+        if (collision.gameObject.tag == "MassKillEnemies") 
         {
+            hasRespawned = false;
+            respawnTimer = 0;
             timer2 = 0;
             timer3 = 0;
             boostActive3 = false;
             boostActive2 = false;
-            boostActive = false;
-            GetComponent<OtherPlayerShootScirpt>().enabled = false;
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "MassKillEnemies")
-        {
-            timer2 = 0;
-            timer3 = 0;
-            boostActive3 = false;
-            boostActive2 = false;
-            boostActive = false;
+            boostActive = true;
             GetComponent<OtherPlayerShootScirpt>().enabled = false;
         }
     }

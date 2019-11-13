@@ -311,10 +311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
-  bulletSpeed: 2.5
-  bulletlifetime: 3
-  shootDelay: 5
-  fireRange: 4
+  bulletSpeed: 3.5
+  bulletlifetime: 5
+  shootDelay: 4
+  fireRange: 6
   distance: {x: 0, y: 0}
 --- !u!82 &-4642496343287322147
 AudioSource:

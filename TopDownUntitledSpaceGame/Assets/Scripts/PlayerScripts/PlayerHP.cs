@@ -78,6 +78,7 @@ public class PlayerHP : MonoBehaviour
         //Makes player "Respawn" after getting hit
         if (deathTimer > respawnAfter && Health <= 0 && hasRespawned == false)
         {
+            //GetComponentInChildren<PlayShoot>().enabled = true;
             hasRespawned = true;
             Instantiate(respawnParticles, player.transform.position, player.transform.rotation);
             Instantiate(respawnSound, player.transform.position, player.transform.rotation);
@@ -87,7 +88,6 @@ public class PlayerHP : MonoBehaviour
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
             //GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<PlayerMovement>().enabled = true;
-            GetComponentInChildren<PlayShoot>().enabled = true;
         }
 
         if (clearEnemies > clearEnemiesFor && massDestroy == true)
@@ -167,8 +167,8 @@ public class PlayerHP : MonoBehaviour
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
             //GetComponent<PolygonCollider2D>().enabled = false;
             player.GetComponentInParent<PlayerMovement>().enabled = false;
-            GetComponentInChildren<PlayShoot>().enabled = false;
-            GetComponentInChildren<OtherPlayerShootScirpt>().enabled = false;
+            //GetComponentInChildren<PlayShoot>().enabled = false;
+            //GetComponentInChildren<OtherPlayerShootScirpt>().enabled = false;
             MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
             healthText.text = "HEALTH: " + Health;// + "/" + initialHealth;
             healthSlider.value = Health;

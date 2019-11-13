@@ -55,8 +55,10 @@ MonoBehaviour:
   shootDelay2: 0.2
   bullet1NeededPoints: 30000
   bullet2NeededPoints: 300000
+  boostActive: 0
   bulletBoostTime: 60
   bulletBoostLastingTime: 30
+  respawnDelay: 2
   spawnRangeX: 0.2
   spawnRangeY: 0.2
 --- !u!58 &2001235025
@@ -91,8 +93,8 @@ MonoBehaviour:
   bulletSpeed: 12
   bulletlifetime: 4
   shootDelay: 0.05
-  spawnRangeX: 0.5
-  spawnRangeY: 0.5
+  spawnRangeX: 0.45
+  spawnRangeY: 0.45
 --- !u!1 &1776245525438966493
 GameObject:
   m_ObjectHideFlags: 0

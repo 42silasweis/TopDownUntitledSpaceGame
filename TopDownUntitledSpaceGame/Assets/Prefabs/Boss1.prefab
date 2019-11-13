@@ -212,8 +212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2066311255329092152, guid: 8a7c6c0c349a8f641b4121bbf23b876f, type: 3}
   bulletSpeed: 3
-  bulletlifetime: 4
-  shootDelay: 5
+  bulletlifetime: 5
+  shootDelay: 4
   fireRange: 5
   distance: {x: 0, y: 0}
 --- !u!82 &326052285482172016
