@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyPoints: 100
-  chaseSpeed: 50
+  chaseSpeed: 100
   chaseTriggerDistance: 1000
   willDespawn: 0
 --- !u!50 &-7541584854271333192

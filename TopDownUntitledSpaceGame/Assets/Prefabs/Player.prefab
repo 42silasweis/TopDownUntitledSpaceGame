@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 219016961}
   - component: {fileID: 2001235025}
   - component: {fileID: 2001235023}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Weapon
   m_TagString: Particle
   m_Icon: {fileID: 0}
@@ -50,9 +50,9 @@ MonoBehaviour:
   prefab3: {fileID: 4745106878842051872, guid: 9716285b6e09fc643931a2376940df73, type: 3}
   bulletSpeed: 8
   bulletlifetime: 4
-  shootDelay: 0.25
-  shootDelay1: 0.22
-  shootDelay2: 0.2
+  shootDelay: 0.13
+  shootDelay1: 0.11
+  shootDelay2: 0.09
   bullet1NeededPoints: 30000
   bullet2NeededPoints: 300000
   boostActive: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 598264366988380627}
   - component: {fileID: 1776245524783836341}
   - component: {fileID: 1776245524783836342}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: SpaceShipSrpite
   m_TagString: PlayerSprite
   m_Icon: {fileID: 0}
@@ -345,6 +345,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
+  pointCount: 0
+  healthUpPoints: 300000
+  healthPackDrop: {fileID: 6185665451235344234, guid: 012a3c439730d5a41beeb10d52024305,
+    type: 3}
   pointsText: {fileID: 0}
   multiplierText: {fileID: 0}
   pointMultiplier: 0

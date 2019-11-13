@@ -54,7 +54,7 @@ public class PlayerHP : MonoBehaviour
         deathTimer = 1;
         firstRespawn = false;
         PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        player.GetComponentInParent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
         GetComponentInChildren<PlayShoot>().enabled = false;
     }
     void Update()
@@ -72,7 +72,7 @@ public class PlayerHP : MonoBehaviour
             healthSlider.value = Health;
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
             //GetComponent<PolygonCollider2D>().enabled = true;
-            GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerMovement>().enabled = true;
             GetComponentInChildren<PlayShoot>().enabled = true;
         }
         //Makes player "Respawn" after getting hit
@@ -87,7 +87,7 @@ public class PlayerHP : MonoBehaviour
             healthSlider.value = Health;
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
             //GetComponent<PolygonCollider2D>().enabled = true;
-            GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerMovement>().enabled = true;
         }
 
         if (clearEnemies > clearEnemiesFor && massDestroy == true)
@@ -96,7 +96,33 @@ public class PlayerHP : MonoBehaviour
             massDestroy = false;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "HealthPack")
+        {
+            if(Health == 0.5)
+            {
+                Health = initialHealth;
+                healthText.text = "HEALTH: " + Health;
+                healthSlider.value = Health;
+                Destroy(collision.gameObject);
+            }
 
+            if (Health == initialHealth)
+            {
+                if (Lives < initialLives)
+                {
+                    Lives++;
+                    liveText.text = "" + Lives;
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "EnBullet") //Player only loses 0.5 of their 1 HP
