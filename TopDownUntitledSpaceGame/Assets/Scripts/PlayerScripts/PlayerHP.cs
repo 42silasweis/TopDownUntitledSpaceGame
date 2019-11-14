@@ -11,7 +11,9 @@ public class PlayerHP : MonoBehaviour
     public float clearEnemiesFor = 3.0f;
     float clearEnemies;
     public float Health = 1.0f;
-    public int Lives = 10;
+    public int Lives = 3;
+    public int maxLives;
+    public int limitedLifeGain = 0;
     int initialLives;
     float initialHealth;
     public float deathTimer;
@@ -110,8 +112,9 @@ public class PlayerHP : MonoBehaviour
 
             if (Health == initialHealth)
             {
-                if (Lives < initialLives)
+                if (Lives < maxLives && limitedLifeGain < initialLives)
                 {
+                    limitedLifeGain++;
                     Lives++;
                     liveText.text = "" + Lives;
                     Destroy(collision.gameObject);
