@@ -7079,6 +7079,11 @@ PrefabInstance:
       propertyPath: healthUpPoints
       value: 200000
       objectReference: {fileID: 0}
+    - target: {fileID: 6376771756501920228, guid: a2eb5e335ae5ecf41b1eb0048ec1880d,
+        type: 3}
+      propertyPath: pointsAdded
+      value: 25000
+      objectReference: {fileID: 0}
     - target: {fileID: 1257708038, guid: a2eb5e335ae5ecf41b1eb0048ec1880d, type: 3}
       propertyPath: healthText
       value: 

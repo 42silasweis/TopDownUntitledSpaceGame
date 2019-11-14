@@ -32,6 +32,7 @@ TagManager:
   - PortalSliderFill
   - PortalTimerSlider
   - HealthPack
+  - Level5Score
   layers:
   - Default
   - TransparentFX

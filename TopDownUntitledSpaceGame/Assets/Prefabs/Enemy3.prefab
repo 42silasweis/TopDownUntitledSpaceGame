@@ -189,6 +189,9 @@ MonoBehaviour:
   tooCloseToBullet: 1.25
   dist: 10000
   distFromPlayer: 0
+  Particle: {fileID: 5532518750664670777, guid: b1f048ae85d29f3488fb4f79e0bbee3a,
+    type: 3}
+  delay: 0.2
 --- !u!114 &1650620728
 MonoBehaviour:
   m_ObjectHideFlags: 0

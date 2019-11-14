@@ -187,8 +187,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
   rotationSpeed: 6
+  Particle: {fileID: 7502145804262012137, guid: 43d51095d3a9d6a458f8fc6087c7d8f5,
+    type: 3}
   spawnRangeX: 3.5
   spawnRangeY: 3.5
+  delay: 0.2
 --- !u!114 &6642913699678713138
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1049143899441133303}
   - component: {fileID: 7590635023758845785}
   - component: {fileID: 7590635023446851574}
-  - component: {fileID: 7590635023446851573}
   m_Layer: 19
   m_Name: Sprite
   m_TagString: Enemy
@@ -115,18 +114,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7590635023446851573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049143899441133301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28968d38f4ff71f47bcb11352f0ea97a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7336065073871894481
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +301,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.6
   rotationSpeed: 6
+  Particle: {fileID: 7502145804262012137, guid: 43d51095d3a9d6a458f8fc6087c7d8f5,
+    type: 3}
   spawnRangeX: 3.5
   spawnRangeY: 3.5
+  delay: 0.4
 --- !u!114 &188415231221502531
 MonoBehaviour:
   m_ObjectHideFlags: 0

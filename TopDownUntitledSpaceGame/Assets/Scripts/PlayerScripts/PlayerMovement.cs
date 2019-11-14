@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(Particle, transform.position, transform.rotation);
         }
 
-
         //This function is to make the player sprite face the direction it is moving
         //I believe it requires the sprite to be a Child of the main Player/Object and rotated 90 degrees
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;

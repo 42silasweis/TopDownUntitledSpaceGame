@@ -22,6 +22,10 @@ public class SmartAIAvoidsBullets : MonoBehaviour
     public float distFromPlayer;
     float timer;
 
+    public GameObject Particle;
+    public float delay = 0.2f;
+    float timer2 = 0;
+
     void Start()
     {
         canChase = true;
@@ -32,7 +36,14 @@ public class SmartAIAvoidsBullets : MonoBehaviour
 
     void Update()
     {
-        
+        //This is the particle trail that follows the Enemy, set by GameObject
+        timer2 += Time.deltaTime;
+        if (timer2 > delay)
+        {
+            timer2 = 0;
+            Instantiate(Particle, transform.position, transform.rotation);
+        }
+
         //Start chasing after  the set spawn delay and then chase the player
         startTimer += Time.deltaTime;
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);

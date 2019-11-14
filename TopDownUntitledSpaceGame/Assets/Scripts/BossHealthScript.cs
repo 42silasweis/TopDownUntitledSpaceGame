@@ -64,9 +64,11 @@ public class BossHealthScript : MonoBehaviour
                 sliderBarName.GetComponent<Text>().enabled = false;
                 switch (Level)
                 {
+                    case 5:
+                        PlayerPrefs.SetInt("Lvl5Complete", 1);
+                        break;
                     case 4:
                         //PlayerPrefs.SetInt("Lvl4Complete", 1);
-                        Debug.Log(points);
                         break;
                     case 3:
                         PlayerPrefs.SetInt("Lvl3Complete", 1);

@@ -11,6 +11,7 @@ public class BounceScript : MonoBehaviour
     List<Vector2> oldSpeeds;
     Vector2 switchVel;
     Transform player;
+    public GameObject Particle;
 
     public float spawnRangeX = 1.5f;
     public float spawnRangeY = 1.5f;
@@ -19,6 +20,9 @@ public class BounceScript : MonoBehaviour
     float spawnDistanceX2;
     float spawnDistanceY2;
     Vector3 RandomPosition1;
+
+    public float delay = 0.2f;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +44,7 @@ public class BounceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
+        GetComponent<Rigidbody2D>().velocity = switchVel * moveSpeed;
 
         //Makes enemy face direction it is moving
         Vector3 moveDirection = GetComponent<Rigidbody2D>().velocity;
@@ -48,6 +52,14 @@ public class BounceScript : MonoBehaviour
         {
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
+        }
+
+        //This is the particle trail that follows the Enemy, set by GameObject
+        timer += Time.deltaTime;
+        if (timer > delay)
+        {
+            timer = 0;
+            Instantiate(Particle, transform.position, transform.rotation);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

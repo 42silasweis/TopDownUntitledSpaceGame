@@ -347,6 +347,7 @@ MonoBehaviour:
   Points: 0
   pointCount: 0
   healthUpPoints: 300000
+  pointsAdded: 50000
   healthPackDrop: {fileID: 6185665451235344234, guid: 012a3c439730d5a41beeb10d52024305,
     type: 3}
   pointsText: {fileID: 0}
@@ -371,6 +372,8 @@ MonoBehaviour:
   clearEnemiesFor: 3
   Health: 1
   Lives: 3
+  maxLives: 5
+  limitedLifeGain: 0
   deathTimer: 0
   healthText: {fileID: 0}
   healthSlider: {fileID: 0}

@@ -297,6 +297,9 @@ MonoBehaviour:
   chaseSpeed: 1
   chaseTriggerDistance: 100
   rotationSpeed: 4
+  Particle: {fileID: 6137667121083588325, guid: 8fd69c22a7fa9a64d963574845794a2b,
+    type: 3}
+  delay: 0.35
 --- !u!114 &5966644276719708630
 MonoBehaviour:
   m_ObjectHideFlags: 0

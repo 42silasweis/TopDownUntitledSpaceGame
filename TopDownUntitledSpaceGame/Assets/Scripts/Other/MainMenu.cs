@@ -29,11 +29,13 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Lvl2Score", Points);
         PlayerPrefs.SetInt("Lvl3Score", Points);
         PlayerPrefs.SetInt("Lvl4Score", Points);
+        PlayerPrefs.SetInt("Lvl5Score", Points);
 
         PlayerPrefs.SetInt("Lvl1Complete", 0);
         PlayerPrefs.SetInt("Lvl2Complete", 0);
         PlayerPrefs.SetInt("Lvl3Complete", 0);
         PlayerPrefs.SetInt("Lvl4Complete", 0);
+        PlayerPrefs.SetInt("Lvl5Complete", 0);
 
         SceneManager.LoadScene("MainMenu");
     }
@@ -43,11 +45,13 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Lvl2Score", Points);
         PlayerPrefs.SetInt("Lvl3Score", Points);
         PlayerPrefs.SetInt("Lvl4Score", Points);
+        PlayerPrefs.SetInt("Lvl5Score", Points);
 
         PlayerPrefs.SetInt("Lvl1Complete", 0);
         PlayerPrefs.SetInt("Lvl2Complete", 0);
         PlayerPrefs.SetInt("Lvl3Complete", 0);
         PlayerPrefs.SetInt("Lvl4Complete", 0);
+        PlayerPrefs.SetInt("Lvl5Complete", 0);
     }
     public void LoadLevel1() //For Level Select LoadLevel1-LoadLevel4
     {
@@ -65,6 +69,10 @@ public class MainMenu : MonoBehaviour
     public void LoadLevel4()
     {
         SceneManager.LoadScene("Level4");
+    }
+    public void LoadLevel5()
+    {
+        SceneManager.LoadScene("Level5");
     }
 
     public void LevelSelect()

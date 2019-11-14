@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
-    public List<Transform> enemyList = new List<Transform>();
     public float respawnAfter = 2.0f;
     public float clearEnemiesFor = 3.0f;
     float clearEnemies;
     public float Health = 1.0f;
     public int Lives = 3;
-    public int maxLives;
-    public int limitedLifeGain = 0;
+    public int maxLives = 5;
+    int limitedLifeGain = 0;
     int initialLives;
     float initialHealth;
     public float deathTimer;

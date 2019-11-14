@@ -21,6 +21,11 @@ public class EnemyStaysNearPlayer : MonoBehaviour
     public float dist = 3;
     float initialDist;
     float timer;
+
+    public GameObject Particle;
+    public float delay = 0.2f;
+    float timer2 = 0;
+
     void Start()
     {
         initialDist = dist;
@@ -30,6 +35,14 @@ public class EnemyStaysNearPlayer : MonoBehaviour
     // This is not nonsense code right?
     void Update()
     {
+        //This is the particle trail that follows the Enemy, set by GameObject
+        timer2 += Time.deltaTime;
+        if (timer2 > delay)
+        {
+            timer2 = 0;
+            Instantiate(Particle, transform.position, transform.rotation);
+        }
+
         startTimer += Time.deltaTime;
         Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         if (chaseDirection.magnitude >= stayDistance)

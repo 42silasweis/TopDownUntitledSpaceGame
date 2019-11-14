@@ -148,6 +148,9 @@ MonoBehaviour:
   speed: 1
   tooCloseToBullet: 2
   dist: 2
+  Particle: {fileID: 7842311732005791931, guid: d6baef9226c2cfe4dadd974e26fda0b8,
+    type: 3}
+  delay: 0.2
 --- !u!114 &4123276851947245844
 MonoBehaviour:
   m_ObjectHideFlags: 0
