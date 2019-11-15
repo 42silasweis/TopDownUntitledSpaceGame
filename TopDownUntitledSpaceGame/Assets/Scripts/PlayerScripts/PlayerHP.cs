@@ -29,10 +29,16 @@ public class PlayerHP : MonoBehaviour
     bool hasRespawned;
     bool massDestroy;
     bool firstRespawn;
+    float deathTimer2;
+    bool playerIsDead = false;
 
+    GameObject musicObject;
+    AudioSource SoundSource;
 
     private void Start()
     {
+        musicObject = GameObject.FindGameObjectWithTag("MainCamera");
+        SoundSource = musicObject.GetComponent<AudioSource>();
 
         initialLives = Lives;
         hasRespawned = true;
@@ -62,6 +68,7 @@ public class PlayerHP : MonoBehaviour
     {
         clearEnemies += Time.deltaTime;
         deathTimer += Time.deltaTime;
+        deathTimer2 += Time.deltaTime;
         //Make the player "Spawn" when starting the game part 2 the if statement part to turn everything back on
         if (deathTimer > respawnAfter && firstRespawn == false)
         {
@@ -89,6 +96,10 @@ public class PlayerHP : MonoBehaviour
             PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = true;
             //GetComponent<PolygonCollider2D>().enabled = true;
             player.GetComponent<PlayerMovement>().enabled = true;
+        }
+        if (deathTimer2 > respawnAfter && playerIsDead == true)
+        {
+            SceneManager.LoadScene("Lose");
         }
 
         if (clearEnemies > clearEnemiesFor && massDestroy == true)
@@ -130,39 +141,47 @@ public class PlayerHP : MonoBehaviour
         if (collision.gameObject.tag == "EnBullet") //Player only loses 0.5 of their 1 HP
         {
             gethurthalf();
-            if (Health <= 0)
+            if (Health <= 0 && Lives >= 0)
             {
-                deathTimer = 0;
-                respawnplayer();
+                if (Lives > 0)
+                {
+                    respawnplayer();
+                }
                 loselife();
 
-                if (Lives < 0)
-                {
-                    Lives = 0;
-                    liveText.text = "" + Lives;
-                    SceneManager.LoadScene("Lose");
-                    //SceneManager.LoadScene("GameOver");
-                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
+            }
+            if (Health <= 0 && Lives < 0)
+            {
+                //Lives = 0;
+                deathTimer2 = 0;
+                liveText.text = "0";// + Lives;
+                playerLost();
+                //SceneManager.LoadScene("Lose");
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
             {
                 gethurt();
 
-                if (Health <= 0)
+                if (Health <= 0 && Lives >= 0)
+                {
+                if(Lives > 0)
                 {
                     respawnplayer();
+                }
                     loselife();
 
-                    if (Lives < 0)
+                }
+                    if (Health <= 0 && Lives < 0)
                     {
-                        Lives = 0;
-                        liveText.text = "" + Lives;
-                        SceneManager.LoadScene("Lose");
+                        //Lives = 0;
+                        deathTimer2 = 0;
+                        liveText.text = "0";// + Lives;
+                        playerLost();
+                        //SceneManager.LoadScene("Lose");
                         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     }
-                }
             }
     }
         void loselife()
@@ -185,6 +204,21 @@ public class PlayerHP : MonoBehaviour
         healthText.text = "HEALTH: " + Health;// + "/" + initialHealth;
         healthSlider.value = Health;
         //Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+    }
+    void playerLost()
+    {
+        StartCoroutine(FadeAudioSource.StartFade(SoundSource, 0.5f, 0.0f));
+        deathTimer2 = 0;
+        clearEnemies = 0;
+        massDestroy = true;
+        playerIsDead = true;
+        PlayerSprite.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        player.GetComponentInParent<PlayerMovement>().enabled = false;
+        MassKillEnemies.GetComponent<BoxCollider2D>().enabled = true;
+        healthText.text = "HEALTH: " + Health;
+        healthSlider.value = Health;
+        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        Instantiate(playerDeathSound, player.transform.position, player.transform.rotation);
     }
         void respawnplayer()
         {

@@ -114,7 +114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2447529397532881271}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
   m_Name: 
@@ -126,8 +126,9 @@ MonoBehaviour:
   points: {fileID: 1156380311010425389, guid: 96556ca995cfddd4583a8005f8947be7, type: 3}
   deathParticle: {fileID: 821232569142608976, guid: 7f32f06b9eb774749950523ad9ac4695,
     type: 3}
-  deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
+  SoundManager: {fileID: 9001272256085399441, guid: c8eedc057483cc24e9e152f2686dd4ed,
     type: 3}
+  deathAudio: {fileID: 8300000, guid: 3ca3f10fe061f5a4287218bfc9e72cc4, type: 3}
 --- !u!60 &2832490092363152778
 PolygonCollider2D:
   m_ObjectHideFlags: 0

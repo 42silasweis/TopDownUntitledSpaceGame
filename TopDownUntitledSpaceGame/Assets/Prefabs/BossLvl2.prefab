@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 91297310659343702}
   - component: {fileID: 91297310659343701}
   - component: {fileID: 7393871466951392340}
+  - component: {fileID: 7584229433950580380}
   m_Layer: 23
   m_Name: Sprite
   m_TagString: Enemy
@@ -100,6 +101,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &7584229433950580380
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91297310659343703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0068466654, y: 0.084010325}
+  m_Size: {x: 0.39351648, y: 0.45310214}
+  m_Direction: 0
 --- !u!1 &7639764045032076403
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,12 +312,11 @@ MonoBehaviour:
     type: 3}
   deathParticle: {fileID: 5756773125778078961, guid: e3dd5aefa02413a4d9cac3e4c76fb1ef,
     type: 3}
-  deathSound: {fileID: 108630354190783774, guid: 3cc82750f36a57f40bd630350515841f,
-    type: 3}
-  getHitSound: {fileID: 8788403744897476408, guid: ac79e0f1163053f468afbe98a8f01b02,
-    type: 3}
   portal: {fileID: 6751918420847861886, guid: 82bcbe66b8dcc0145b7e268d3996b785, type: 3}
+  respawnDelay: 2
   Level: 4
+  deathAudio: {fileID: 8300000, guid: 7b72f0fa5f62b73468bd2c91e2e773bc, type: 3}
+  getHitAudio: {fileID: 8300000, guid: 5d0a9bbae1314c84a931fef15706f1c8, type: 3}
 --- !u!114 &7639764045032076404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +347,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a16dab5556a5ef842815f1ce5dc54126, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

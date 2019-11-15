@@ -227,7 +227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7728667893335742188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
   m_Name: 
@@ -239,8 +239,9 @@ MonoBehaviour:
   points: {fileID: 3324035654004855513, guid: 1aa0131d6a5be764db86211815d958e3, type: 3}
   deathParticle: {fileID: 392612806060515391, guid: 0e6fc565dbf06404986bcfedfbbfe21d,
     type: 3}
-  deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
+  SoundManager: {fileID: 9001272256085399441, guid: c8eedc057483cc24e9e152f2686dd4ed,
     type: 3}
+  deathAudio: {fileID: 8300000, guid: 3ca3f10fe061f5a4287218bfc9e72cc4, type: 3}
 --- !u!60 &7924619279610534417
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -312,4 +313,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67459e929b7a86d4a9d8e026ca76887e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterSpawnDelay: 0.3
+  afterSpawnDelay: 0.2

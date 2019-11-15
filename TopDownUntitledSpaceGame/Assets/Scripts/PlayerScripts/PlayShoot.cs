@@ -40,6 +40,9 @@ public class PlayShoot : MonoBehaviour
     //public int bullet3NeededPoints;
     int currentPoints;
 
+    public AudioSource SoundSource;
+    public AudioClip bulletFireSound;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -99,6 +102,7 @@ public class PlayShoot : MonoBehaviour
         {
             timer = 0;
             GameObject bullet = Instantiate(theBullet, transform.position, transform.rotation);
+            SoundSource.PlayOneShot(bulletFireSound); //plays the shoot sound
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Vector2 shootDir = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
@@ -113,6 +117,7 @@ public class PlayShoot : MonoBehaviour
         {
             timer = 0;
             GameObject bullet = Instantiate(theBullet, transform.position, transform.rotation);
+            SoundSource.PlayOneShot(bulletFireSound); //plays the shoot sound
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 

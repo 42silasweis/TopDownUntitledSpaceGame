@@ -22,6 +22,9 @@ public class OtherPlayerShootScirpt : MonoBehaviour
     //public int bullet3NeededPoints;
     int currentPoints;
 
+    public AudioSource SoundSource;
+    public AudioClip bulletFireSound;
+
     void Start()
     {
         theBullet = prefab1;
@@ -35,6 +38,7 @@ public class OtherPlayerShootScirpt : MonoBehaviour
         {
             timer = 0;
             GameObject bullet = Instantiate(theBullet, transform.position, transform.rotation);
+            SoundSource.PlayOneShot(bulletFireSound); //plays the shoot sound
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 

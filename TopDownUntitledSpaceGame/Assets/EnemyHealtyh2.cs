@@ -10,13 +10,27 @@ public class EnemyHealtyh2 : MonoBehaviour
     GameObject droppedPointMultiplier;
     public GameObject points;
     public GameObject deathParticle;
-    public GameObject deathSound;
-    public GameObject getHitSound;
+    //public GameObject deathSound;
+    //public GameObject getHitSound;
+
+    public GameObject SoundManager;
+    AudioSource SoundSource;
+    public AudioClip deathAudio;
+    public AudioClip getHitAudio;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        SoundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        SoundSource = SoundManager.GetComponent<AudioSource>();
+    }
+    void Update()
+    {
+        if (SoundManager == null || SoundSource == null)
+        {
+            SoundManager = GameObject.FindGameObjectWithTag("SoundManager");
+            SoundSource = SoundManager.GetComponent<AudioSource>();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,14 +48,20 @@ public class EnemyHealtyh2 : MonoBehaviour
         {
             enemyHealth--;
             Instantiate(deathParticle, transform.position, transform.rotation);
-            Instantiate(getHitSound, transform.position, transform.rotation);
+            if(SoundSource != null)
+            {
+            SoundSource.PlayOneShot(getHitAudio, 0.35F);
+            }
 
             if (objectInstantiated == false && enemyHealth <= 0)
             {
                 //Instantiate the object;
                 GameObject droppedPointMultiplier = Instantiate(pointMultiplier, transform.position, transform.rotation);
                 Instantiate(points, transform.position, Quaternion.identity);
-                Instantiate(deathSound, transform.position, Quaternion.identity);
+                if (SoundSource != null)
+                {
+                    SoundSource.PlayOneShot(deathAudio, 0.5F);
+                }
                 droppedPointMultiplier.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
                 objectInstantiated = true;
                 Destroy(gameObject);

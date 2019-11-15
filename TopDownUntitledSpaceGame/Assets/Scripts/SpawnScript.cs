@@ -10,7 +10,6 @@ public class SpawnScript : MonoBehaviour
     public bool restartAfterPlayerDeath = true;
 
     public GameObject enemy;
-    public GameObject spawnSound;
     //public float spawnDistance = 3.0f;
     public Vector3 spawnPosition;
     float time;
@@ -38,8 +37,16 @@ public class SpawnScript : MonoBehaviour
     float spawnDistanceY;
     float spawnDistanceX2;
     float spawnDistanceY2;
+
+    //Sounds
+    //public GameObject SoundManager;
+    public AudioSource SoundSource;
+    public AudioClip spawnSound;
     void Start()
     {
+        //SoundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        //SoundSource = SoundManager.GetComponent<AudioSource>();
+
         /*Turns the the spawners transform position and makes a value that is 
         minus the spawnRange into a float that can be used in the new Vector2 later */
         spawnDistanceX = transform.position.x;
@@ -75,7 +82,7 @@ public class SpawnScript : MonoBehaviour
                 resetAfterTimer = 0;
                 time3 = 0;
                 Instantiate(enemy, spawnPosition, Quaternion.identity);
-                Instantiate(spawnSound, spawnPosition, Quaternion.identity);
+                SoundSource.PlayOneShot(spawnSound); //plays the spawn sound
                 enemyCount++;
                 RandoomPosition();
             }

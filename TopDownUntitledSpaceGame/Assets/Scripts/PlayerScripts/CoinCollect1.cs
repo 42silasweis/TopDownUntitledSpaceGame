@@ -78,11 +78,10 @@ public class CoinCollect1 : MonoBehaviour
             Instantiate(healthPackDrop, transform.position, Quaternion.identity);
             Debug.Log("HealthPack Works");
         }
-        //if (pointCount >= healthUpPoints && playerHealth == 1 && dropInstantiated == false || pointCount >= healthUpPoints && playerLives >= 5 && dropInstantiated == false)
-        else
+        if (pointCount >= healthUpPoints && playerHealth == 1 && dropInstantiated == false || pointCount >= healthUpPoints && playerLives >= 5 && dropInstantiated == false)
         {
             //timerDone = false;
-            //pointCount = 0;
+            pointCount = 0;
             //droptimer = 0;
         }
 

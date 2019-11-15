@@ -17,8 +17,8 @@ public class DisableAndEnbaldeEnemyAIVersion : MonoBehaviour
         Vector2 playerPosition = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         transform.right = playerPosition;
 
-        GetComponent<PolygonCollider2D>().enabled = false;
-        GetComponent<Enemy1AI>().enabled = false;
+        //GetComponent<PolygonCollider2D>().enabled = false;
+        //GetComponent<Enemy1AI>().enabled = false;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class DisableAndEnbaldeEnemyAIVersion : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<Enemy1AI>().enabled = true;
-            GetComponent<EnemyHealth>().enabled = true;
+            //GetComponent<EnemyHealth>().enabled = true;
             spawnedIn = true;
         }
     }

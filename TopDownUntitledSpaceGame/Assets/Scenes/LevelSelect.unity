@@ -1036,8 +1036,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1019.64, y: 989.37}
-  m_SizeDelta: {x: 20.88, y: 18.48}
+  m_AnchoredPosition: {x: -1020.6, y: 990.1}
+  m_SizeDelta: {x: 16.49, y: 14.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755804664
 MonoBehaviour:
@@ -1149,12 +1149,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5239982405228994763, guid: cc793cabed228c34e9bc1921ddd98f8a,
+  m_Sprite: {fileID: 2200152346530727272, guid: cc793cabed228c34e9bc1921ddd98f8a,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   Level2: {fileID: 1791929381}
   Level3: {fileID: 874852168}
   Level4: {fileID: 321744292}
-  Level5: {fileID: 0}
+  Level5: {fileID: 755804662}
   Level5Score: {fileID: 1105204992}
   Level5Score2: {fileID: 342599941}
   level1PointsText: {fileID: 1574111038}

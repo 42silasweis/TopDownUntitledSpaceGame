@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4594663952959452407}
   - component: {fileID: 4594663952959452400}
   - component: {fileID: 4594663952959452401}
-  - component: {fileID: 4594663952959452405}
   - component: {fileID: 4142149723272984590}
   - component: {fileID: 4594663952959452406}
   m_Layer: 8
@@ -106,27 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4594663952959452405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4594663952959452403}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daa85aa98d0f00147bbbf2824418ed5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealth: 1
-  objectInstantiated: 0
-  pointMultiplier: {fileID: 1319256357904151370, guid: 0a6e9a99d4cc8664389b0f15eee6cc67,
-    type: 3}
-  points: {fileID: 1156380311010425389, guid: 96556ca995cfddd4583a8005f8947be7, type: 3}
-  deathParticle: {fileID: 3257162635120171412, guid: a445bf5aed781a1429de1cef2195877b,
-    type: 3}
-  deathSound: {fileID: 3912348039352759551, guid: 0dd7ad0a95494c44eb7d2c8d46d981f4,
-    type: 3}
 --- !u!60 &4142149723272984590
 PolygonCollider2D:
   m_ObjectHideFlags: 0

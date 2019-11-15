@@ -17,8 +17,8 @@ public class DisableAndEnableEnemyStayScript : MonoBehaviour
         Vector2 playerPosition = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         transform.right = playerPosition;
 
-        GetComponent<PolygonCollider2D>().enabled = false;
-        GetComponent<EnemyStaysNearPlayer>().enabled = false;
+        //GetComponent<PolygonCollider2D>().enabled = false;
+        //GetComponent<EnemyStaysNearPlayer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class DisableAndEnableEnemyStayScript : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<EnemyStaysNearPlayer>().enabled = true;
-            GetComponent<EnemyHealtyh2>().enabled = true;
+            //GetComponent<EnemyHealtyh2>().enabled = true;
             spawnedIn = true;
         }
     }

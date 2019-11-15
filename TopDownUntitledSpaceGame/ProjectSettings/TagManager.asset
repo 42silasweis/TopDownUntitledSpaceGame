@@ -33,6 +33,7 @@ TagManager:
   - PortalTimerSlider
   - HealthPack
   - Level5Score
+  - SoundManager
   layers:
   - Default
   - TransparentFX

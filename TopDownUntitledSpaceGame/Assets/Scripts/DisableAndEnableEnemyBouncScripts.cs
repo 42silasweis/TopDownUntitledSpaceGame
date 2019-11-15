@@ -15,8 +15,8 @@ public class DisableAndEnableEnemyBouncScripts : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         Vector2 playerPosition = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         transform.right = playerPosition;
-        GetComponent<PolygonCollider2D>().enabled = false;
-        GetComponent<BounceScript>().enabled = false;
+        //GetComponent<PolygonCollider2D>().enabled = false;
+        //GetComponent<BounceScript>().enabled = false;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class DisableAndEnableEnemyBouncScripts : MonoBehaviour
         {
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<BounceScript>().enabled = true;
-            GetComponent<EnemyHealth>().enabled = true;
+            //GetComponent<EnemyHealth>().enabled = true;
             spawnedIn = true;
         }
     }
