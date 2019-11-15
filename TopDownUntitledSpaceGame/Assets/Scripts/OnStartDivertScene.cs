@@ -13,11 +13,13 @@ public class OnStartDivertScene : MonoBehaviour
         PlayerPrefs.SetInt("Lvl2Score", Points);
         PlayerPrefs.SetInt("Lvl3Score", Points);
         PlayerPrefs.SetInt("Lvl4Score", Points);
+        PlayerPrefs.SetInt("Lvl5Score", Points);
 
         PlayerPrefs.SetInt("Lvl1Complete", 0);
         PlayerPrefs.SetInt("Lvl2Complete", 0);
         PlayerPrefs.SetInt("Lvl3Complete", 0);
         PlayerPrefs.SetInt("Lvl4Complete", 0);
+        PlayerPrefs.SetInt("Lvl5Complete", 0);
     }
 
     // Update is called once per frame
