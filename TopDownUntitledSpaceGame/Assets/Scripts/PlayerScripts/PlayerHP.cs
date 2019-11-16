@@ -164,7 +164,7 @@ public class PlayerHP : MonoBehaviour
             {
                 gethurt();
 
-                if (Health <= 0 && Lives >= 0)
+                if (Health <= 0 && Lives >= 0 && hasRespawned == true)
                 {
                 if(Lives > 0)
                 {
